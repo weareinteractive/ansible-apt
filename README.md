@@ -1,4 +1,4 @@
-# apt
+# Ansible Apt Role
 
 [![Build Status](https://travis-ci.org/weareinteractive/ansible-role-apt.png?branch=master)](https://travis-ci.org/weareinteractive/ansible-role-apt)
 
@@ -9,13 +9,13 @@
 Using `ansible-galaxy`:
 
 ```
-$ ansible-galaxy install weareinteractive.ansible-role-apt
+$ ansible-galaxy install franklinkim.apt
 ```
 
 Using `arm` ([Ansible Role Manager](https://github.com/mirskytech/ansible-role-manager/)):
 
 ```
-$ arm install weareinteractive.ansible-role-apt
+$ arm install franklinkim.apt
 ```
 
 Using `git`:
@@ -45,7 +45,7 @@ apt_install_recommends: false
 
 ```yml
 - host: all
-  role: weareinteractive.apt
+  role: franklinkim.apt
   vars:
     apt_packages:
       - vim
