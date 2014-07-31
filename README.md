@@ -4,9 +4,7 @@
 
 > `apt` is an [Ansible](http://www.ansible.com) role which configures apt and installs/updates packages
 
-# Documentation 
-
-## Installation
+# Installation
 
 Using `ansible-galaxy`:
 
@@ -26,7 +24,7 @@ Using `git`:
 $ git clone https://github.com/weareinteractive/ansible-role-apt.git
 ```
 
-## Options
+# Variables
 
 ```yml
 # file: defauls/main.yaml
@@ -39,13 +37,15 @@ apt_upgrade: 'yes'
 apt_cache_valid_time: 3600
 ```
 
-## Usage
+# Usage
+
+Here's an example playbook:
 
 ```yml
 # file: playbook.yml
 
-- { role: weareinteractive.apt }
-
+- host: all
+  role: weareinteractive.apt
 ```
 
 # Testing
