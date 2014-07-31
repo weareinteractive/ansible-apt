@@ -10,7 +10,7 @@
 
 - name: Upgrading packages
   apt:
-    upgrade: yes
+    upgrade: "yes"
   tags:
     - system
     - apt
