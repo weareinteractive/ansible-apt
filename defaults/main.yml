@@ -2,7 +2,15 @@
 # For more information about default variables see:
 # http://www.ansibleworks.com/docs/playbooks_variables.html#id26
 
-# sets the amount of time the cache is valid (5m)
+# sets the amount of time the cache is valid
 apt_cache_valid_time: 3600
 # packages to install
 apt_packages: []
+# remove packages that are no longer needed for dependencies
+apt_autoremove: yes
+# remove .deb files for packages no longer on your system
+apt_autoclean: yes
+# whether or not suggested packages should be installed.
+apt_install_suggests: false
+# whether or not recommended packages should be installed.
+apt_install_recommends: false

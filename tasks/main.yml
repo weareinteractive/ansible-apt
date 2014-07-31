@@ -1,34 +1,48 @@
 ---
 
 - name: Updating cache
-  apt:
-    update_cache: yes
-    cache_valid_time: "{{ apt_cache_valid_time }}"
+  apt: >
+    update_cache=yes
+    cache_valid_time={{ apt_cache_valid_time }}
   tags:
     - system
     - apt
 
-- name: Upgrading packages
-  apt:
-    upgrade: "yes"
+- name: Installing required packages
+  apt: >
+    pkg={{ item }}
+    state=latest
+  with_items:
+    - aptitude
+    - python-apt
   tags:
     - system
     - apt
 
-- name: Installing default packages
-  apt:
-    pkg: python-apt
-    state: latest
+- name: Removing packages that are no longer needed for dependencies
+  shell: apt-get -y autoremove
+  when: apt_autoremove
+
+- name: Removing .deb files for packages no longer on your system
+  shell: apt-get -y autoclean
+  when: apt_autoclean
+
+- name: Updating general config
+  template: >
+    src=etc-apt-apt-conf-d-10general.j2
+    dest=/etc/apt/apt.conf.d/10general
+    owner=root
+    group=root
+    mode=0644
   tags:
     - system
     - apt
 
 - name: Installing additional packages
-  apt:
-    pkg: "{{ item }}"
-    state: latest
+  apt: >
+    pkg={{ item }}
+    state=latest
   with_items: apt_packages
-  when: apt_packages is defined
   tags:
     - system
     - apt

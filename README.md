@@ -27,10 +27,18 @@ $ git clone https://github.com/weareinteractive/ansible-role-apt.git
 ## Variables
 
 ```yml
-# sets the amount of time the cache is valid (5m)
+# sets the amount of time the cache is valid
 apt_cache_valid_time: 3600
 # packages to install
 apt_packages: []
+# remove packages that are no longer needed for dependencies
+apt_autoremove: yes
+# remove .deb files for packages no longer on your system
+apt_autoclean: yes
+# whether or not “suggested” packages should be installed.
+apt_install_suggests: false
+# whether or not “recommended” packages should be installed.
+apt_install_recommends: false
 ```
 
 ## Example playbook
@@ -51,7 +59,7 @@ apt_packages: []
 ```
 $ git clone https://github.com/weareinteractive/ansible-role-apt.git
 $ cd ansible-role-apt
-$ vagrant up
+$ ansible-playbook test.yml
 ```
 
 ## Contributing
