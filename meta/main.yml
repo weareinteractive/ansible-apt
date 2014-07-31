@@ -1,0 +1,21 @@
+---
+# Ansible Galaxy meta data
+# https://galaxy.ansible.com
+#
+galaxy_info:
+  author: franklin
+  company: We Are Interactive
+  description: Configures apt and installs/updates packages
+  min_ansible_version: 1.4
+  license: MIT
+  platforms:
+    - name: Ubuntu
+      versions:
+        - all
+  categories:
+    - system
+
+# For more information about role dependencies see:
+# http://www.ansibleworks.com/docs/playbooks_roles.html#role-dependencies
+#
+dependencies: []
