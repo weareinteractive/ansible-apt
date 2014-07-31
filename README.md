@@ -1,6 +1,7 @@
 # Ansible Apt Role
 
 [![Build Status](https://travis-ci.org/weareinteractive/ansible-role-apt.png?branch=master)](https://travis-ci.org/weareinteractive/ansible-role-apt)
+[![Stories in Ready](https://badge.waffle.io/weareinteractive/ansible-role-apt.svg?label=ready&title=Ready)](http://waffle.io/weareinteractive/ansible-role-apt)
 
 > `apt` is an [Ansible](http://www.ansible.com) role which configures apt and installs/updates packages
 
