@@ -2,9 +2,7 @@
 # For more information about default variables see:
 # http://www.ansibleworks.com/docs/playbooks_variables.html#id26
 
-# install packages
-apt_packages: []
-# upgrade all packages
-apt_upgrade: 'yes'
 # sets the amount of time the cache is valid (5m)
 apt_cache_valid_time: 3600
+# packages to install
+apt_packages: []
