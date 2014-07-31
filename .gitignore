@@ -1,5 +1,5 @@
 .*
 *~
 !.git*
-!.travis
+!.travis.yml
 vagrant_*
