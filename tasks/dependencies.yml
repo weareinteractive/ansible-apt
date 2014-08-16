@@ -1,0 +1,12 @@
+---
+
+- name: Installing required packages
+  apt: >
+    pkg={{ item }}
+    state=latest
+  with_items:
+    - aptitude
+    - python-apt
+  tags:
+    - system
+    - apt

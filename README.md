@@ -1,9 +1,15 @@
 # Ansible Apt Role
 
-[![Build Status](https://travis-ci.org/weareinteractive/ansible-role-apt.png?branch=master)](https://travis-ci.org/weareinteractive/ansible-role-apt)
-[![Stories in Ready](https://badge.waffle.io/weareinteractive/ansible-role-apt.svg?label=ready&title=Ready)](http://waffle.io/weareinteractive/ansible-role-apt)
+[![Build Status](https://travis-ci.org/weareinteractive/ansible-apt.png?branch=master)](https://travis-ci.org/weareinteractive/ansible-apt)
+[![Stories in Ready](https://badge.waffle.io/weareinteractive/ansible-apt.svg?label=ready&title=Ready)](http://waffle.io/weareinteractive/ansible-apt)
 
-> `apt` is an [Ansible](http://www.ansible.com) role which configures apt and installs/updates packages
+> `apt` is an [ansible](http://www.ansible.com) role which: 
+> 
+> * updates apt 
+> * cleans up apt
+> * configures apt
+> * installs packages
+> * registers repositories
 
 ## Installation
 
@@ -22,12 +28,12 @@ $ arm install franklinkim.apt
 Using `git`:
 
 ```
-$ git clone https://github.com/weareinteractive/ansible-role-apt.git
+$ git clone https://github.com/weareinteractive/ansible-apt.git
 ```
 
 ## Variables
 
-```yml
+```
 # sets the amount of time the cache is valid
 apt_cache_valid_time: 3600
 # packages to install
@@ -40,13 +46,16 @@ apt_autoclean: yes
 apt_install_suggests: false
 # whether or not “recommended” packages should be installed.
 apt_install_recommends: false
+# repositories to register
+apt_repositories: []
 ```
 
 ## Example playbook
 
-```yml
+```
 - host: all
-  role: franklinkim.apt
+  roles: 
+    - franklinkim.apt
   vars:
     apt_packages:
       - vim
@@ -58,14 +67,12 @@ apt_install_recommends: false
 ## Testing
 
 ```
-$ git clone https://github.com/weareinteractive/ansible-role-apt.git
-$ cd ansible-role-apt
-$ ansible-playbook test.yml
+$ git clone https://github.com/weareinteractive/ansible-apt.git
+$ cd ansible-apt
+$ vagrant up
 ```
 
 ## Contributing
-[![I Love Open Source](http://www.iloveopensource.io/images/logo-lightbg.png)](http://www.iloveopensource.io/projects/53da2bea87659fce66003fa9)
-
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests and examples for any new or changed functionality.
 
 1. Fork it

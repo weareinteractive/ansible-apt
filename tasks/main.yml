@@ -1,48 +1,8 @@
 ---
 
-- name: Updating cache
-  apt: >
-    update_cache=yes
-    cache_valid_time={{ apt_cache_valid_time }}
-  tags:
-    - system
-    - apt
-
-- name: Installing required packages
-  apt: >
-    pkg={{ item }}
-    state=latest
-  with_items:
-    - aptitude
-    - python-apt
-  tags:
-    - system
-    - apt
-
-- name: Removing packages that are no longer needed for dependencies
-  shell: apt-get -y autoremove
-  when: apt_autoremove
-
-- name: Removing .deb files for packages no longer on your system
-  shell: apt-get -y autoclean
-  when: apt_autoclean
-
-- name: Updating general config
-  template: >
-    src=etc-apt-apt-conf-d-10general.j2
-    dest=/etc/apt/apt.conf.d/10general
-    owner=root
-    group=root
-    mode=0644
-  tags:
-    - system
-    - apt
-
-- name: Installing additional packages
-  apt: >
-    pkg={{ item }}
-    state=latest
-  with_items: apt_packages
-  tags:
-    - system
-    - apt
+- include: update.yml
+- include: dependencies.yml
+- include: repositories.yml
+- include: cleanup.yml
+- include: configure.yml
+- include: packages.yml

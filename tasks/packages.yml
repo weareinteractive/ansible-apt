@@ -1,0 +1,10 @@
+---
+
+- name: Installing packages
+  apt: >
+    pkg={{ item }}
+    state=latest
+  with_items: apt_packages
+  tags:
+    - system
+    - apt

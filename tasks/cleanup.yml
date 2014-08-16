@@ -1,0 +1,15 @@
+---
+
+- name: Removing packages that are no longer needed for dependencies
+  shell: apt-get -y autoremove
+  when: apt_autoremove
+  tags:
+    - system
+    - apt
+
+- name: Removing .deb files for packages no longer on your system
+  shell: apt-get -y autoclean
+  when: apt_autoclean
+  tags:
+    - system
+    - apt

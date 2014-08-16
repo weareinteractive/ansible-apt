@@ -1,0 +1,12 @@
+---
+
+- name: Configuring general config
+  template: >
+    src=etc-apt-apt-conf-d-10general.j2
+    dest=/etc/apt/apt.conf.d/10general
+    owner=root
+    group=root
+    mode=0644
+  tags:
+    - system
+    - apt
