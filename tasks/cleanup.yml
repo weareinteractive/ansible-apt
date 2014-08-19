@@ -6,6 +6,7 @@
   tags:
     - system
     - apt
+    - cleanup
 
 - name: Removing .deb files for packages no longer on your system
   shell: apt-get -y autoclean
@@ -13,3 +14,4 @@
   tags:
     - system
     - apt
+    - cleanup

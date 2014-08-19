@@ -4,5 +4,5 @@
 - include: dependencies.yml
 - include: repositories.yml
 - include: cleanup.yml
-- include: configure.yml
+- include: config.yml
 - include: packages.yml

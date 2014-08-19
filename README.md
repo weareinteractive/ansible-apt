@@ -33,6 +33,8 @@ $ git clone https://github.com/weareinteractive/ansible-apt.git
 
 ## Variables
 
+Here is a list of all the default variables for this role, which are also available in `defaults/main.yml`.
+
 ```
 # sets the amount of time the cache is valid
 apt_cache_valid_time: 3600
@@ -42,9 +44,9 @@ apt_packages: []
 apt_autoremove: yes
 # remove .deb files for packages no longer on your system
 apt_autoclean: yes
-# whether or not “suggested” packages should be installed.
+# whether or not suggested packages should be installed.
 apt_install_suggests: false
-# whether or not “recommended” packages should be installed.
+# whether or not recommended packages should be installed.
 apt_install_recommends: false
 # repositories to register
 apt_repositories: []
