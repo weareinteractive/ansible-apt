@@ -38,6 +38,8 @@ Here is a list of all the default variables for this role, which are also availa
 ```
 # sets the amount of time the cache is valid
 apt_cache_valid_time: 3600
+# upgrade system: safe | full | dist
+apt_upgrade:
 # packages to install
 apt_packages: []
 # remove packages that are no longer needed for dependencies
