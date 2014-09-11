@@ -52,6 +52,8 @@ apt_install_suggests: false
 apt_install_recommends: false
 # repositories to register
 apt_repositories: []
+# gpg keys for external repositories
+apt_keys: []
 ```
 
 ## Example playbook
