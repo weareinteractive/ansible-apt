@@ -9,7 +9,8 @@
 > * cleans up apt
 > * configures apt
 > * installs packages
-> * registers repositories
+> * add repositories
+> * add keys
 
 ## Installation
 
