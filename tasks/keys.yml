@@ -1,0 +1,11 @@
+---
+
+- name: Adding apt signing key
+  apt_key: >
+    url="{{ item }}"
+    state=present
+  with_items: apt_keys
+  tags:
+    - system
+    - apt
+    - keys
