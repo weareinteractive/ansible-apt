@@ -3,6 +3,6 @@
 - include: dependencies.yml
 - include: repositories.yml
 - include: update.yml
-- include: cleanup.yml
 - include: config.yml
 - include: packages.yml
+- include: cleanup.yml

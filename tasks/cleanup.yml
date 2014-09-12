@@ -3,6 +3,7 @@
 - name: Removing packages that are no longer needed for dependencies
   shell: apt-get -y autoremove
   when: apt_autoremove
+  when: aptupgrade.changed or aptinstalls.changed
   tags:
     - system
     - apt
@@ -11,6 +12,7 @@
 - name: Removing .deb files for packages no longer on your system
   shell: apt-get -y autoclean
   when: apt_autoclean
+  when: aptupgrade.changed or aptinstalls.changed
   tags:
     - system
     - apt
