@@ -5,5 +5,5 @@
 - include: keys.yml
 - include: repositories.yml
 - include: update.yml
-- include: cleanup.yml
 - include: packages.yml
+- include: cleanup.yml
