@@ -11,3 +11,17 @@
     - system
     - apt
     - config
+
+- name: Configure to remount read only root filesystems
+  template: >
+    src=etc-apt-apt-conf-d-10-remount-readonly-filesystems.j2
+    dest=/etc/apt/apt.conf.d/10remount-readonly-filesystems
+    owner=root
+    group=root
+    mode=0644
+  when: apt_remount_filesystem
+  tags:
+    - system
+    - apt
+    - config
+
