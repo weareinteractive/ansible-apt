@@ -51,6 +51,8 @@ apt_autoclean: yes
 apt_install_suggests: false
 # whether or not recommended packages should be installed.
 apt_install_recommends: false
+# remount root filesystem r/w before running if mounted r/o
+apt_remount_filesystem: false
 # repositories to register
 apt_repositories: []
 # gpg keys for external repositories
