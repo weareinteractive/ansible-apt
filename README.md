@@ -52,7 +52,9 @@ apt_install_suggests: false
 # whether or not recommended packages should be installed.
 apt_install_recommends: false
 # remount root filesystem r/w before running if mounted r/o
-apt_remount_filesystem: false
+apt_remount_filesystem_rootfs: false
+# remount tmp before running if mounted noexec
+apt_remount_filesystem_tmpfs: false
 # repositories to register
 apt_repositories: []
 # gpg keys for external repositories
