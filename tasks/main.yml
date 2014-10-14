@@ -1,9 +1,10 @@
 ---
 
 - include: config.yml
+- include: update.yml
 - include: dependencies.yml
 - include: keys.yml
 - include: repositories.yml
-- include: update.yml
+- include: upgrade.yml
 - include: packages.yml
 - include: cleanup.yml
