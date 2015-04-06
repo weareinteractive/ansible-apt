@@ -1,12 +1,8 @@
 ---
 
 - name: Installing packages
-  apt: >
-    pkg={{ item }}
-    state=present
+  apt:
+    pkg: "{{ item }}"
+    state: "{{ apt_packages_state }}"
   with_items: apt_packages
   register: apt_packages_result
-  tags:
-    - system
-    - apt
-    - packages

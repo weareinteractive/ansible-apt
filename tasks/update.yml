@@ -1,10 +1,6 @@
 ---
 
 - name: Updating cache
-  apt: >
-    update_cache=yes
-    cache_valid_time={{ apt_cache_valid_time }}
-  tags:
-    - system
-    - apt
-    - update
+  apt:
+    update_cache: yes
+    cache_valid_time: "{{ apt_cache_valid_time }}"

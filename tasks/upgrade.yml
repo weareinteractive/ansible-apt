@@ -1,11 +1,7 @@
 ---
 
 - name: Upgrading system
-  apt: >
-    upgrade={{apt_upgrade}}
+  apt:
+    upgrade=: "{{ apt_upgrade }}"
   when: apt_upgrade == "safe" or apt_upgrade == "full" or apt_upgrade == "dist"
   register: apt_upgrade_result
-  tags:
-    - system
-    - apt
-    - upgrade

@@ -1,11 +1,13 @@
-# Ansible Apt Role
+# Ansible APT Role
 
-[![Build Status](https://travis-ci.org/weareinteractive/ansible-apt.png?branch=master)](https://travis-ci.org/weareinteractive/ansible-apt)
-[![Stories in Ready](https://badge.waffle.io/weareinteractive/ansible-apt.svg?label=ready&title=Ready)](http://waffle.io/weareinteractive/ansible-apt)
+[![Build Status](https://img.shields.io/travis/weareinteractive/ansible-apt.svg)](https://travis-ci.org/weareinteractive/ansible-apt)
+[![Galaxy](http://img.shields.io/badge/galaxy-franklinkim.apt-blue.svg)](https://galaxy.ansible.com/list#/roles/1366)
+[![GitHub Tags](https://img.shields.io/github/tag/weareinteractive/ansible-apt.svg)](https://github.com/weareinteractive/ansible-apt)
+[![GitHub Stars](https://img.shields.io/github/stars/weareinteractive/ansible-apt.svg)](https://github.com/weareinteractive/ansible-apt)
 
-> `apt` is an [ansible](http://www.ansible.com) role which: 
-> 
-> * updates apt 
+> `apt` is an [ansible](http://www.ansible.com) role which:
+>
+> * updates apt
 > * cleans up apt
 > * configures apt
 > * installs packages
@@ -43,6 +45,8 @@ apt_cache_valid_time: 3600
 apt_upgrade:
 # packages to install
 apt_packages: []
+# apt_packages state: present | latest
+apt_package_state: present
 # remove packages that are no longer needed for dependencies
 apt_autoremove: yes
 # remove .deb files for packages no longer on your system
@@ -64,15 +68,16 @@ apt_keys: []
 ## Example playbook
 
 ```
-- host: all
-  roles: 
+- hosts: all
+  sudo: yes
+  roles:
     - franklinkim.apt
   vars:
+    apt_cache_valid_time: 7200
     apt_packages:
       - vim
-      - openssl
-    apt_upgrade: 'no'
-    apt_cache_valid_time: 7200 
+      - tree
+    apt_packages_state: latest
 ```
 
 ## Testing
