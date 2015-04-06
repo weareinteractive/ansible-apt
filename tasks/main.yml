@@ -1,10 +1,49 @@
 ---
 
 - include: config.yml
+  tags:
+    - system
+    - apt
+    - apt-config
+
 - include: update.yml
+  tags:
+    - system
+    - apt
+    - apt-update
+
 - include: dependencies.yml
+  tags:
+    - system
+    - apt
+    - apt-dependencies
+
 - include: keys.yml
+  tags:
+    - system
+    - apt
+    - apt-keys
+
 - include: repositories.yml
+  tags:
+    - system
+    - apt
+    - apt-repositories
+
 - include: upgrade.yml
+  tags:
+    - system
+    - apt
+    - apt-upgrade
+
 - include: packages.yml
+  tags:
+    - system
+    - apt
+    - apt-packages
+
 - include: cleanup.yml
+  tags:
+    - system
+    - apt
+    - apt-cleanup

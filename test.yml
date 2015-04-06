@@ -1,6 +1,7 @@
 ---
 
 - hosts: all
+  sudo: yes
   roles:
     - franklinkim.apt
   vars:
@@ -8,3 +9,4 @@
     apt_packages:
       - vim
       - tree
+    apt_packages_state: latest
