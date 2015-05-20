@@ -5,7 +5,7 @@
 # sets the amount of time the cache is valid
 apt_cache_valid_time: 3600
 # upgrade system: safe | full | dist
-apt_upgrade:
+apt_upgrade: no
 # packages to install
 apt_packages: []
 # apt_packages state: present | latest
