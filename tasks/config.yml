@@ -6,7 +6,7 @@
     dest: /etc/apt/apt.conf.d/10general
     owner: root
     group: root
-    mode: 0644
+    mode: "0644"
 
 - name: Configuring remount filesystems
   template:
@@ -14,5 +14,5 @@
     dest: /etc/apt/apt.conf.d/10remount
     owner: root
     group: root
-    mode: 0644
+    mode: "0644"
   when: apt_remount_filesystem

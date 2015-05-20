@@ -2,6 +2,6 @@
 
 - name: Upgrading system
   apt:
-    upgrade=: "{{ apt_upgrade }}"
-  when: apt_upgrade == "safe" or apt_upgrade == "full" or apt_upgrade == "dist"
+    upgrade: "{{ apt_upgrade }}"
+  when: apt_upgrade != false
   register: apt_upgrade_result

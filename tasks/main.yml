@@ -4,46 +4,19 @@
   tags:
     - system
     - apt
+    - config
     - apt-config
 
-- include: update.yml
+- include: install.yml
   tags:
     - system
     - apt
-    - apt-update
+    - install
+    - apt-install
 
-- include: dependencies.yml
+- include: manage.yml
   tags:
     - system
     - apt
-    - apt-dependencies
-
-- include: keys.yml
-  tags:
-    - system
-    - apt
-    - apt-keys
-
-- include: repositories.yml
-  tags:
-    - system
-    - apt
-    - apt-repositories
-
-- include: upgrade.yml
-  tags:
-    - system
-    - apt
-    - apt-upgrade
-
-- include: packages.yml
-  tags:
-    - system
-    - apt
-    - apt-packages
-
-- include: cleanup.yml
-  tags:
-    - system
-    - apt
-    - apt-cleanup
+    - manage
+    - apt-manage
