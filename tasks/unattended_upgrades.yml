@@ -14,6 +14,6 @@
     group: root
     mode: "0644"
   with_items:
-    - 'etc/apt/apt.conf.d/25auto-upgrades.conf'
-    - 'etc/apt/apt.conf.d/50unattended-upgrades.conf'
+    - "etc/apt/apt.conf.d/25auto-upgrades.conf"
+    - "etc/apt/apt.conf.d/50unattended-upgrades.conf"
   when: apt_unattended_upgrades
