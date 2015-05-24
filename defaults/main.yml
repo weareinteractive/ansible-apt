@@ -44,7 +44,7 @@ apt_unattended_upgrades_minimal_steps: no
 apt_mails: []
 # Set this value to "true" to get emails only on errors. Default
 # is to always send a mail if Unattended-Upgrade::Mail is set
-apt_unattended_upgrades_notify_always: no
+apt_unattended_upgrades_notify_error_only: yes
 # do automatic removal of new unused dependencies after the upgrade
 # (equivalent to apt-get autoremove)
 apt_unattended_upgrades_autoremove: yes

@@ -11,5 +11,5 @@
       - tree
     apt_mails:
       - root
-    apt_unattended_upgrades_notify_always: yes
+    apt_unattended_upgrades_notify_error_only: no
 

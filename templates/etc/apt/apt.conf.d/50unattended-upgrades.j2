@@ -40,7 +40,7 @@ Unattended-Upgrade::Mail "{{ apt_mails | join(',') }}";
 
 // Set this value to "true" to get emails only on errors. Default
 // is to always send a mail if Unattended-Upgrade::Mail is set
-Unattended-Upgrade::MailOnlyOnError "{{ apt_unattended_upgrades_notify_always | to_nice_json }}";
+Unattended-Upgrade::MailOnlyOnError "{{ apt_unattended_upgrades_notify_error_only | to_nice_json }}";
 
 // Do automatic removal of new unused dependencies after the upgrade
 // (equivalent to apt-get autoremove)
