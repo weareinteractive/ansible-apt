@@ -9,4 +9,7 @@
     apt_packages:
       - vim
       - tree
-    apt_packages_state: latest
+    apt_mails:
+      - root
+    apt_unattended_upgrades_notify_always: yes
+
