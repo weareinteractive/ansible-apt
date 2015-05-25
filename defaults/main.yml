@@ -1,6 +1,14 @@
 ---
 # For more information about default variables see:
 # http://www.ansibleworks.com/docs/playbooks_variables.html#id26
+#
+# apt_unattended_upgrades_blacklist:
+#   - vim
+#   - libc6
+# apt_mails:
+#   - root
+#   - foo@dev.null
+#
 
 # sets the amount of time the cache is valid
 apt_cache_valid_time: 3600
@@ -8,20 +16,44 @@ apt_cache_valid_time: 3600
 apt_upgrade: no
 # packages to install
 apt_packages: []
-# apt_packages state: present | latest
-apt_packages_state: present
 # remove packages that are no longer needed for dependencies
 apt_autoremove: yes
 # remove .deb files for packages no longer on your system
 apt_autoclean: yes
+
 # whether or not suggested packages should be installed.
-apt_install_suggests: false
-# whether or not recommended packages should be installed.
-apt_install_recommends: false
+apt_install_suggests: no
+# do not install Recommended packages by default
+apt_install_recommends: no
+# allow 'apt-get autoremove' to remove recommended packages
+apt_remove_recommends: no
+
+# enable unattended-upgrades
+apt_unattended_upgrades: yes
+# list of packages to not update (regexp are supported)
+apt_unattended_upgrades_blacklist: []
+# Split the upgrade into the smallest possible chunks so that
+# they can be interrupted with SIGUSR1. This makes the upgrade
+# a bit slower but it has the benefit that shutdown while a upgrade
+# is running is possible (with a small delay)
+apt_unattended_upgrades_minimal_steps: no
+# Send email to this address for problems or packages upgrades
+# If empty or unset then no email is sent, make sure that you
+# have a working mail setup on your system. A package that provides
+# 'mailx' must be installed. E.g. "user@example.com"
+apt_mails: []
+# Set this value to "true" to get emails only on errors. Default
+# is to always send a mail if Unattended-Upgrade::Mail is set
+apt_unattended_upgrades_notify_error_only: yes
+# do automatic removal of new unused dependencies after the upgrade
+# (equivalent to apt-get autoremove)
+apt_unattended_upgrades_autoremove: yes
+
 # remount file system: rootfs | tmpfs
 #   tmpfs:  remount tmp before running if mounted noexec
 #   rootfs: remount root filesystem r/w before running if mounted r/o
 apt_remount_filesystem:
+
 # repositories to register
 apt_repositories: []
 # gpg keys for external repositories

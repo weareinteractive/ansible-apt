@@ -23,5 +23,4 @@ Vagrant.configure("2") do |config|
     ansible.verbose = 'vv'
     ansible.sudo = true
   end
-
 end

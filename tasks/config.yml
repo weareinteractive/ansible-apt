@@ -1,18 +1,23 @@
 ---
 
-- name: Configuring general config
+- name: Configuring APT
   template:
-    src: etc-apt-apt.conf.d-10general.j2
-    dest: /etc/apt/apt.conf.d/10general
-    owner: root
-    group: root
+    src: "{{ item }}.j2"
+    dest: "/{{ item }}"
+    owner: "root"
+    group: "root"
     mode: "0644"
+  with_items:
+    - "etc/apt/apt.conf.d/10general"
+    - "etc/apt/apt.conf.d/50unattended-upgrades"
 
 - name: Configuring remount filesystems
   template:
-    src: "etc-apt-apt.conf.d-10remount_{{ apt_remount_filesystem }}.j2"
-    dest: /etc/apt/apt.conf.d/10remount
-    owner: root
-    group: root
+    src: "{{ item }}.j2"
+    dest: "/{{ item }}"
+    owner: "root"
+    group: "root"
     mode: "0644"
   when: apt_remount_filesystem
+  with_items:
+    - "etc/apt/apt.conf.d/10remount_{{ apt_remount_filesystem }}"
