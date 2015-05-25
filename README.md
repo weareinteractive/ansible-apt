@@ -23,10 +23,10 @@ Using `ansible-galaxy`:
 $ ansible-galaxy install franklinkim.apt
 ```
 
-Using `arm` ([Ansible Role Manager](https://github.com/mirskytech/ansible-role-manager/)):
+Using `requirements.yml`:
 
 ```
-$ arm install franklinkim.apt
+- src: franklinkim.apt
 ```
 
 Using `git`:
