@@ -46,6 +46,9 @@ Here is a list of all the default variables for this role, which are also availa
 # apt_mails:
 #   - root
 #   - foo@dev.null
+# apt_keys:
+#   - keyserver: keyserver.ubuntu.com
+#     id: 36A1D7869245C8950F966E92D8576A8BA88D21E9
 #
 
 # sets the amount of time the cache is valid
