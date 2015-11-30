@@ -29,6 +29,14 @@ apt_install_suggests: no
 apt_install_recommends: no
 # allow 'apt-get autoremove' to remove recommended packages
 apt_remove_recommends: no
+# Enable the update/upgrade script
+apt_periodic: yes
+# Do “apt-get update” automatically every n-days (0=disable)
+apt_update_package_lists: 1
+# Do “apt-get upgrade –download-only” every n-days (0=disable)
+apt_download_upgradeable_packages: 0
+# Do “apt-get autoclean” every n-days (0=disable)
+apt_auto_clean_interval: 0
 
 # enable unattended-upgrades
 apt_unattended_upgrades: yes
@@ -47,9 +55,16 @@ apt_mails: []
 # Set this value to "true" to get emails only on errors. Default
 # is to always send a mail if Unattended-Upgrade::Mail is set
 apt_unattended_upgrades_notify_error_only: yes
-# do automatic removal of new unused dependencies after the upgrade
+# Do automatic removal of new unused dependencies after the upgrade
 # (equivalent to apt-get autoremove)
 apt_unattended_upgrades_autoremove: yes
+# Automatically reboot *WITHOUT CONFIRMATION*
+# if the file /var/run/reboot-required is found after the upgrade
+apt_unattended_upgrades_automatic_reboot: no
+# If automatic reboot is enabled and needed, reboot at the specific
+# time instead of immediately
+# Values: now | 02:00 | ...
+apt_unattended_upgrades_automatic_reboot_time: now
 
 # remount file system: rootfs | tmpfs
 #   tmpfs:  remount tmp before running if mounted noexec
