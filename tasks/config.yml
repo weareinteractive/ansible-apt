@@ -9,6 +9,17 @@
     mode: "0644"
   with_items:
     - "etc/apt/apt.conf.d/10general"
+    - "etc/apt/apt.conf.d/10periodic"
+
+- name: Configuring APT
+  template:
+    src: "{{ item }}.j2"
+    dest: "/{{ item }}"
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  when: apt_unattended_upgrades
+  with_items:
     - "etc/apt/apt.conf.d/50unattended-upgrades"
 
 - name: Configuring remount filesystems

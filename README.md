@@ -1,11 +1,11 @@
-# Ansible APT Role
+# Ansible franklinkim.apt role
 
 [![Build Status](https://img.shields.io/travis/weareinteractive/ansible-apt.svg)](https://travis-ci.org/weareinteractive/ansible-apt)
 [![Galaxy](http://img.shields.io/badge/galaxy-franklinkim.apt-blue.svg)](https://galaxy.ansible.com/list#/roles/1366)
 [![GitHub Tags](https://img.shields.io/github/tag/weareinteractive/ansible-apt.svg)](https://github.com/weareinteractive/ansible-apt)
 [![GitHub Stars](https://img.shields.io/github/stars/weareinteractive/ansible-apt.svg)](https://github.com/weareinteractive/ansible-apt)
 
-> `apt` is an [ansible](http://www.ansible.com) role which:
+> `franklinkim.apt` is an [Ansible](http://www.ansible.com) role which:
 >
 > * updates apt
 > * cleans up apt
@@ -19,27 +19,35 @@
 
 Using `ansible-galaxy`:
 
-```
+```shell
 $ ansible-galaxy install franklinkim.apt
 ```
 
 Using `requirements.yml`:
 
-```
+```yaml
 - src: franklinkim.apt
 ```
 
 Using `git`:
 
-```
+```shell
 $ git clone https://github.com/weareinteractive/ansible-apt.git franklinkim.apt
 ```
+
+## Dependencies
+
+* Ansible >= 1.9
 
 ## Variables
 
 Here is a list of all the default variables for this role, which are also available in `defaults/main.yml`.
 
-```
+```yaml
+---
+# For more information about default variables see:
+# http://www.ansibleworks.com/docs/playbooks_variables.html#id26
+#
 # apt_unattended_upgrades_blacklist:
 #   - vim
 #   - libc6
@@ -49,7 +57,6 @@ Here is a list of all the default variables for this role, which are also availa
 # apt_keys:
 #   - keyserver: keyserver.ubuntu.com
 #     id: 36A1D7869245C8950F966E92D8576A8BA88D21E9
-#
 
 # sets the amount of time the cache is valid
 apt_cache_valid_time: 3600
@@ -68,6 +75,14 @@ apt_install_suggests: no
 apt_install_recommends: no
 # allow 'apt-get autoremove' to remove recommended packages
 apt_remove_recommends: no
+# Enable the update/upgrade script
+apt_periodic: yes
+# Do “apt-get update” automatically every n-days (0=disable)
+apt_update_package_lists: 1
+# Do “apt-get upgrade –download-only” every n-days (0=disable)
+apt_download_upgradeable_packages: 0
+# Do “apt-get autoclean” every n-days (0=disable)
+apt_auto_clean_interval: 0
 
 # enable unattended-upgrades
 apt_unattended_upgrades: yes
@@ -85,10 +100,17 @@ apt_unattended_upgrades_minimal_steps: no
 apt_mails: []
 # Set this value to "true" to get emails only on errors. Default
 # is to always send a mail if Unattended-Upgrade::Mail is set
-apt_unattended_upgrades_notify_always: no
-# do automatic removal of new unused dependencies after the upgrade
+apt_unattended_upgrades_notify_error_only: yes
+# Do automatic removal of new unused dependencies after the upgrade
 # (equivalent to apt-get autoremove)
 apt_unattended_upgrades_autoremove: yes
+# Automatically reboot *WITHOUT CONFIRMATION*
+# if the file /var/run/reboot-required is found after the upgrade
+apt_unattended_upgrades_automatic_reboot: no
+# If automatic reboot is enabled and needed, reboot at the specific
+# time instead of immediately
+# Values: now | 02:00 | ...
+apt_unattended_upgrades_automatic_reboot_time: now
 
 # remount file system: rootfs | tmpfs
 #   tmpfs:  remount tmp before running if mounted noexec
@@ -99,11 +121,17 @@ apt_remount_filesystem:
 apt_repositories: []
 # gpg keys for external repositories
 apt_keys: []
-```
-
-## Example playbook
 
 ```
+
+
+## Usage
+
+This is an example playbook:
+
+```yaml
+---
+
 - hosts: all
   sudo: yes
   roles:
@@ -115,12 +143,14 @@ apt_keys: []
       - tree
     apt_mails:
       - root
-    apt_unattended_upgrades_notify_always: yes
+    apt_unattended_upgrades_notify_error_only: no
+
+
 ```
 
 ## Testing
 
-```
+```shell
 $ git clone https://github.com/weareinteractive/ansible-apt.git
 $ cd ansible-apt
 $ vagrant up
@@ -134,6 +164,13 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+*Note: To update the `README.md` file please install and run `ansible-role`:*
+
+```shell
+$ gem install ansible-role
+$ ansible-role docgen
+```
 
 ## License
 Copyright (c) We Are Interactive under the MIT license.

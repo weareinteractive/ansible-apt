@@ -1,0 +1,18 @@
+---
+
+galaxy_name: franklinkim.apt
+github_user: weareinteractive
+github_name: ansible-apt
+badges: |
+  [![Build Status](https://img.shields.io/travis/weareinteractive/ansible-apt.svg)](https://travis-ci.org/weareinteractive/ansible-apt)
+  [![Galaxy](http://img.shields.io/badge/galaxy-franklinkim.apt-blue.svg)](https://galaxy.ansible.com/list#/roles/1366)
+  [![GitHub Tags](https://img.shields.io/github/tag/weareinteractive/ansible-apt.svg)](https://github.com/weareinteractive/ansible-apt)
+  [![GitHub Stars](https://img.shields.io/github/stars/weareinteractive/ansible-apt.svg)](https://github.com/weareinteractive/ansible-apt)
+description: |
+  > * updates apt
+  > * cleans up apt
+  > * configures apt
+  > * installs packages
+  > * add repositories
+  > * add keys
+  > * manages unattended upgrades
