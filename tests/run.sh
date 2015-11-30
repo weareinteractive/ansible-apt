@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # define variables
-ROLE_NAME=franklinkim.aot
+ROLE_NAME=franklinkim.apt
 
 # create role symnlink
 ln -s $(pwd) /usr/share/ansible/roles/$ROLE_NAME
