@@ -1,7 +1,7 @@
 // {{ ansible_managed }}
 
 // Enable the update/upgrade script (0=disable)
-APT::Periodic::Enable “{{ apt_periodic | int}}”;
+APT::Periodic::Enable "{{ apt_periodic | int}}";
 
 // Do “apt-get update” automatically every n-days (0=disable)
 APT::Periodic::Update-Package-Lists "{{ apt_update_package_lists }}";
