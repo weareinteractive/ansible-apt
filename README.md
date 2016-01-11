@@ -122,6 +122,12 @@ apt_repositories: []
 # gpg keys for external repositories
 apt_keys: []
 
+# HTTP proxy server
+apt_http_proxy_address:
+
+# HTTP pipeline depth
+apt_http_pipeline_depth: 5
+
 ```
 
 
