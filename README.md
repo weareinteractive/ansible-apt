@@ -45,9 +45,6 @@ Here is a list of all the default variables for this role, which are also availa
 
 ```yaml
 ---
-# For more information about default variables see:
-# http://www.ansibleworks.com/docs/playbooks_variables.html#id26
-#
 # apt_unattended_upgrades_blacklist:
 #   - vim
 #   - libc6
@@ -124,7 +121,6 @@ apt_keys: []
 
 # HTTP proxy server
 apt_http_proxy_address:
-
 # HTTP pipeline depth
 apt_http_pipeline_depth: 5
 
