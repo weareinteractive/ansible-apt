@@ -1,7 +1,4 @@
 ---
-# For more information about default variables see:
-# http://www.ansibleworks.com/docs/playbooks_variables.html#id26
-#
 # apt_unattended_upgrades_blacklist:
 #   - vim
 #   - libc6
@@ -75,3 +72,8 @@ apt_remount_filesystem:
 apt_repositories: []
 # gpg keys for external repositories
 apt_keys: []
+
+# HTTP proxy server
+apt_http_proxy_address:
+# HTTP pipeline depth
+apt_http_pipeline_depth: 5

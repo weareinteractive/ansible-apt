@@ -1,3 +1,13 @@
+<a name="1.8.0"></a>
+## 1.8.0 (2016-01-11)
+
+
+#### Features
+
+*   add support for proxy servers ([91ae92f5](https://github.com/weareinteractive/ansible-apt/commit/91ae92f56e7f3fa2f9851adc03235d3985dd7b7e))
+
+
+
 <a name="1.7.1"></a>
 ### 1.7.1 (2015-12-03)
 

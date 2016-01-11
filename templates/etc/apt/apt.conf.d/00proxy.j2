@@ -1,0 +1,12 @@
+// {{ ansible_managed }}
+
+{% if apt_http_proxy_address %}
+// Proxy apt communication through this HTTP proxy
+Acquire::http::Proxy "{{ apt_http_proxy_address }}";
+{% endif %}
+
+{% if apt_http_pipeline_depth %}
+// Control the number of pipelined HTTP requests on a single TCP connection
+// May need to set to 0 as some proxies (Squid, etc) do not have full support
+Acquire::http::Pipeline-Depth "{{ apt_http_pipeline_depth }}";
+{% endif %}
