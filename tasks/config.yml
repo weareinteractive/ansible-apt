@@ -40,6 +40,6 @@
     owner: "root"
     group: "root"
     mode: "0644"
-  when: apt_http_proxy_address
+  when: apt_http_proxy_address is defined
   with_items:
     - "etc/apt/apt.conf.d/00proxy"
