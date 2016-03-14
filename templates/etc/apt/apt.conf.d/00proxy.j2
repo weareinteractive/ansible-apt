@@ -1,11 +1,11 @@
 // {{ ansible_managed }}
 
-{% if apt_http_proxy_address %}
+{% if apt_http_proxy_address is defined %}
 Acquire::http::Proxy "{{ apt_http_proxy_address }}";
 {% endif %}
-{% if apt_https_proxy_address %}
+{% if apt_https_proxy_address is defined %}
 Acquire::https::Proxy "{{ apt_https_proxy_address }}";
 {% endif %}
-{% if apt_http_pipeline_depth %}
+{% if apt_http_pipeline_depth is defined %}
 Acquire::http::Pipeline-Depth "{{ apt_http_pipeline_depth }}";
 {% endif %}
