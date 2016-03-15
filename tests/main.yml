@@ -1,9 +1,8 @@
 ---
 
 - hosts: all
-  sudo: yes
   roles:
-    - franklinkim.apt
+    - weareinteractive.apt
   vars:
     apt_cache_valid_time: 7200
     apt_packages:
