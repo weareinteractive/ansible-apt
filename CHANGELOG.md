@@ -1,3 +1,13 @@
+<a name="2.0.0"></a>
+## 2.0.0 (2016-03-15)
+
+
+#### Features
+
+*   update to ansible 2.0 ([052bc675](https://github.com/weareinteractive/ansible-apt/commit/052bc675f01ded71c7bd9bd7e8154ecb2f600c4a))
+
+
+
 <a name="1.8.0"></a>
 ## 1.8.0 (2016-01-11)
 
