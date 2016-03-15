@@ -1,11 +1,11 @@
-# Ansible franklinkim.apt role
+# Ansible weareinteractive.apt role
 
 [![Build Status](https://img.shields.io/travis/weareinteractive/ansible-apt.svg)](https://travis-ci.org/weareinteractive/ansible-apt)
-[![Galaxy](http://img.shields.io/badge/galaxy-franklinkim.apt-blue.svg)](https://galaxy.ansible.com/list#/roles/1366)
+[![Galaxy](http://img.shields.io/badge/galaxy-weareinteractive.apt-blue.svg)](https://galaxy.ansible.com/weareinteractive/apt)
 [![GitHub Tags](https://img.shields.io/github/tag/weareinteractive/ansible-apt.svg)](https://github.com/weareinteractive/ansible-apt)
 [![GitHub Stars](https://img.shields.io/github/stars/weareinteractive/ansible-apt.svg)](https://github.com/weareinteractive/ansible-apt)
 
-> `franklinkim.apt` is an [Ansible](http://www.ansible.com) role which:
+> `weareinteractive.apt` is an [Ansible](http://www.ansible.com) role which:
 >
 > * updates apt
 > * cleans up apt
@@ -15,29 +15,33 @@
 > * add keys
 > * manages unattended upgrades
 
+**Note:**
+
+> Since Ansible Galaxy supports [organization](https://www.ansible.com/blog/ansible-galaxy-2-release) now, this role has moved from `franklinkim.apt` to `weareinteractive.apt`!
+
 ## Installation
 
 Using `ansible-galaxy`:
 
 ```shell
-$ ansible-galaxy install franklinkim.apt
+$ ansible-galaxy install weareinteractive.apt
 ```
 
 Using `requirements.yml`:
 
 ```yaml
-- src: franklinkim.apt
+- src: weareinteractive.apt
 ```
 
 Using `git`:
 
 ```shell
-$ git clone https://github.com/weareinteractive/ansible-apt.git franklinkim.apt
+$ git clone https://github.com/weareinteractive/ansible-apt.git weareinteractive.apt
 ```
 
 ## Dependencies
 
-* Ansible >= 1.9
+* Ansible >= 2.0
 
 ## Variables
 
@@ -118,11 +122,10 @@ apt_remount_filesystem:
 apt_repositories: []
 # gpg keys for external repositories
 apt_keys: []
-
-# HTTP proxy server
-apt_http_proxy_address:
-# HTTP pipeline depth
-apt_http_pipeline_depth: 5
+# HTTP proxy server (optional)
+# apt_http_proxy_address:
+# HTTP pipeline depth (optional)
+# apt_http_pipeline_depth: 5
 
 ```
 
@@ -135,9 +138,8 @@ This is an example playbook:
 ---
 
 - hosts: all
-  sudo: yes
   roles:
-    - franklinkim.apt
+    - weareinteractive.apt
   vars:
     apt_cache_valid_time: 7200
     apt_packages:
@@ -150,12 +152,13 @@ This is an example playbook:
 
 ```
 
+
 ## Testing
 
 ```shell
 $ git clone https://github.com/weareinteractive/ansible-apt.git
 $ cd ansible-apt
-$ vagrant up
+$ make test
 ```
 
 ## Contributing
