@@ -1,3 +1,13 @@
+<a name="2.0.1"></a>
+### 2.0.1 (2016-03-22)
+
+
+#### Features
+
+*   escape bare variables ([96525b39](https://github.com/weareinteractive/ansible-apt/commit/96525b393671352973d81abfcb942272f70dc6bd))
+
+
+
 <a name="2.0.0"></a>
 ## 2.0.0 (2016-03-15)
 

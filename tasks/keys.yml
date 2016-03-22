@@ -10,4 +10,4 @@
     url: "{{ item.url | default(omit) }}"
     validate_certs: "{{ item.validate_certs | default(omit) }}"
     state: present
-  with_items: apt_keys
+  with_items: "{{ apt_keys }}"
