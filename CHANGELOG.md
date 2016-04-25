@@ -1,3 +1,13 @@
+<a name="2.0.2"></a>
+### 2.0.2 (2016-04-25)
+
+
+#### Features
+
+*   always get latest unattended-upgrades instead of just present ([a927d6af](https://github.com/weareinteractive/ansible-apt/commit/a927d6afbc0b35481c5eea3623cd5eebf7a3d415))
+
+
+
 <a name="2.0.1"></a>
 ### 2.0.1 (2016-03-22)
 
