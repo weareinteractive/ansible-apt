@@ -1,3 +1,13 @@
+<a name="2.0.3"></a>
+### 2.0.3 (2016-08-18)
+
+
+#### Bug Fixes
+
+*   fix proxy config conditions ([27787e80](https://github.com/weareinteractive/ansible-apt/commit/27787e80dc805a828af35b7206aae835e9d8b0aa))
+
+
+
 <a name="2.0.2"></a>
 ### 2.0.2 (2016-04-25)
 
