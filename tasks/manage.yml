@@ -3,4 +3,3 @@
 - include: keys.yml
 - include: repositories.yml
 - include: packages.yml
-- include: cleanup.yml
