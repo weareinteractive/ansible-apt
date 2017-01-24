@@ -41,7 +41,7 @@ $ git clone https://github.com/weareinteractive/ansible-apt.git weareinteractive
 
 ## Dependencies
 
-* Ansible >= 2.0
+* Ansible >= 2.1
 
 ## Variables
 
