@@ -4,5 +4,5 @@
   apt:
     upgrade: "{{ apt_upgrade }}"
     update_cache: yes
+    autoremove: "{{ apt_autoremove }}"
   when: apt_upgrade != false
-  register: apt_upgrade_result
