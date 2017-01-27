@@ -4,5 +4,5 @@
   apt:
     pkg: "{{ item }}"
     state: present
+    autoremove: "{{ apt_autoremove }}"
   with_items: "{{ apt_packages }}"
-  register: apt_packages_result
