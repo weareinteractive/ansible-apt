@@ -24,14 +24,14 @@
 
 - name: Configuring remount filesystems
   template:
-    src: "{{ item }}.j2"
+    src: "etc/apt/apt.conf.d/10remount_{{ item }}.j2"
     dest: "/{{ item }}"
     owner: "root"
     group: "root"
     mode: "0644"
   when: apt_remount_filesystem
   with_items:
-    - "etc/apt/apt.conf.d/10remount_{{ apt_remount_filesystem }}"
+    - "{{ apt_remount_filesystem }}"
 
 - name: Configuring APT proxy behavior
   template:
