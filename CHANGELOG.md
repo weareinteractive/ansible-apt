@@ -1,3 +1,13 @@
+<a name="2.1.0"></a>
+## 2.1.0 (2017-01-27)
+
+
+#### Features
+
+*   use builtin autoremove option ([87a34935](https://github.com/weareinteractive/ansible-apt/commit/87a34935874f78d4752f2557c9094496eb51a391))
+
+
+
 <a name="2.0.3"></a>
 ### 2.0.3 (2016-08-18)
 
