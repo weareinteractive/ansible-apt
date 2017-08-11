@@ -1,11 +1,7 @@
 ---
 
 - name: Adding apt repository
-  apt_repository: >
-    repo="{{ item }}"
-    update_cache=yes
-  with_items: apt_repositories
-  tags:
-    - system
-    - apt
-    - repositories
+  apt_repository:
+    repo: "{{ item }}"
+    update_cache: yes
+  with_items: "{{ apt_repositories }}"

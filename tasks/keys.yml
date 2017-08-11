@@ -1,11 +1,13 @@
 ---
 
 - name: Adding apt signing key
-  apt_key: >
-    url="{{ item }}"
-    state=present
-  with_items: apt_keys
-  tags:
-    - system
-    - apt
-    - keys
+  apt_key:
+    id: "{{ item.id | default(omit) }}"
+    file: "{{ item.file | default(omit) }}"
+    data: "{{ item.data | default(omit) }}"
+    keyring: "{{ item.keyring | default(omit) }}"
+    keyserver: "{{ item.keyserver | default(omit) }}"
+    url: "{{ item.url | default(omit) }}"
+    validate_certs: "{{ item.validate_certs | default(omit) }}"
+    state: present
+  with_items: "{{ apt_keys }}"

@@ -1,21 +1,6 @@
 ---
 
 - name: Updating cache
-  apt: >
-    update_cache=yes
-    cache_valid_time={{ apt_cache_valid_time }}
-  tags:
-    - system
-    - apt
-    - update
-
-
-- name: Upgrading system
-  apt: >
-    upgrade={{apt_upgrade}}
-  when: apt_upgrade == "safe" or apt_upgrade == "full" or apt_upgrade == "dist"
-  register: apt_upgrade_result
-  tags:
-    - system
-    - apt
-    - update
+  apt:
+    update_cache: yes
+    cache_valid_time: "{{ apt_cache_valid_time }}"

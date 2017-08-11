@@ -1,14 +1,10 @@
 ---
 
 - name: Installing required packages
-  apt: >
-    pkg={{ item }}
-    state=present
+  apt:
+    pkg: "{{ item }}"
+    state: present
   with_items:
     - aptitude
     - python-apt
     - python-pycurl
-  tags:
-    - system
-    - apt
-    - dependencies

@@ -1,27 +1,45 @@
 ---
 
-- name: Configuring general config
-  template: >
-    src=etc-apt-apt.conf.d-10general.j2
-    dest=/etc/apt/apt.conf.d/10general
-    owner=root
-    group=root
-    mode=0644
-  tags:
-    - system
-    - apt
-    - config
+- name: Configuring APT
+  template:
+    src: "{{ item }}.j2"
+    dest: "/{{ item }}"
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  with_items:
+    - "etc/apt/apt.conf.d/10general"
+    - "etc/apt/apt.conf.d/10periodic"
 
-- name: Configuring remount read only root filesystems
-  template: >
-    src=etc-apt-apt.conf.d-10remount-readonly-filesystems.j2
-    dest=/etc/apt/apt.conf.d/10remount-readonly-filesystems
-    owner=root
-    group=root
-    mode=0644
+- name: Configuring APT
+  template:
+    src: "{{ item }}.j2"
+    dest: "/{{ item }}"
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  when: apt_unattended_upgrades
+  with_items:
+    - "etc/apt/apt.conf.d/50unattended-upgrades"
+
+- name: Configuring remount filesystems
+  template:
+    src: "{{ item }}.j2"
+    dest: "/{{ item }}"
+    owner: "root"
+    group: "root"
+    mode: "0644"
   when: apt_remount_filesystem
-  tags:
-    - system
-    - apt
-    - config
+  with_items:
+    - "etc/apt/apt.conf.d/10remount_{{ apt_remount_filesystem }}"
 
+- name: Configuring APT proxy behavior
+  template:
+    src: "{{ item }}.j2"
+    dest: "/{{ item }}"
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  when: apt_http_proxy_address is defined or apt_https_proxy_address is defined
+  with_items:
+    - "etc/apt/apt.conf.d/00proxy"

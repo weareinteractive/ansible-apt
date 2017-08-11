@@ -1,9 +1,22 @@
 ---
 
 - include: config.yml
-- include: dependencies.yml
-- include: keys.yml
-- include: repositories.yml
-- include: update.yml
-- include: packages.yml
-- include: cleanup.yml
+  tags:
+    - system
+    - apt
+    - config
+    - apt-config
+
+- include: install.yml
+  tags:
+    - system
+    - apt
+    - install
+    - apt-install
+
+- include: manage.yml
+  tags:
+    - system
+    - apt
+    - manage
+    - apt-manage
