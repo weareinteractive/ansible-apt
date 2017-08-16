@@ -53,5 +53,5 @@
     mode: "0644"
   when: apt_aptitude_solution_cost
   with_items:
-    - "etc/apt/apt.conf.d/20-alter-aptitude-solution-cost"
+    - "etc/apt/apt.conf.d/20alter-aptitude-solution-cost"
 
