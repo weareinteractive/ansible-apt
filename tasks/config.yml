@@ -25,7 +25,7 @@
 - name: Configuring remount filesystems
   template:
     src: "etc/apt/apt.conf.d/10remount_{{ item }}.j2"
-    dest: "/{{ item }}"
+    dest: "/etc/apt/apt.conf.d/10remount_{{ item }}"
     owner: "root"
     group: "root"
     mode: "0644"
