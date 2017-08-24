@@ -16,6 +16,8 @@ description: |
   > * add repositories
   > * add keys
   > * manages unattended upgrades
+  > * optionally alters solution cost
+  > * optionally allows filesystems to be remounted
 
   **Note:**
 

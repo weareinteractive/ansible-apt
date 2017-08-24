@@ -14,6 +14,8 @@
 > * add repositories
 > * add keys
 > * manages unattended upgrades
+> * optionally alters solution cost
+> * optionally allows filesystems to be remounted
 
 **Note:**
 
@@ -116,7 +118,7 @@ apt_unattended_upgrades_automatic_reboot_time: now
 # remount file system: rootfs | tmpfs
 #   tmpfs:  remount tmp before running if mounted noexec
 #   rootfs: remount root filesystem r/w before running if mounted r/o
-apt_remount_filesystem: []
+apt_remount_filesystem:
 
 # repositories to register
 apt_repositories: []
@@ -126,6 +128,15 @@ apt_keys: []
 # apt_http_proxy_address:
 # HTTP pipeline depth (optional)
 # apt_http_pipeline_depth: 5
+
+# Change Aptitudes solution costs, default is not to change anything
+# Mirror https://lists.debian.org/543FF3BD.1020609@zen.co.uk
+# apt_aptitude_solution_cost:
+#   - priority
+#   - removals
+#   - canceled-actions
+apt_aptitude_solution_cost: []
+
 
 ```
 
@@ -148,11 +159,7 @@ This is an example playbook:
     apt_mails:
       - root
     apt_unattended_upgrades_notify_error_only: no
-    # Mirror https://lists.debian.org/543FF3BD.1020609@zen.co.uk
-    apt_aptitude_solution_cost:
-      - priority
-      - removals
-      - canceled-actions
+
 
 ```
 
