@@ -14,6 +14,8 @@
 > * add repositories
 > * add keys
 > * manages unattended upgrades
+> * optionally alters solution cost
+> * optionally allows filesystems to be remounted
 
 **Note:**
 
@@ -126,6 +128,15 @@ apt_keys: []
 # apt_http_proxy_address:
 # HTTP pipeline depth (optional)
 # apt_http_pipeline_depth: 5
+
+# Change Aptitudes solution costs, default is not to change anything
+# Mirror https://lists.debian.org/543FF3BD.1020609@zen.co.uk
+# apt_aptitude_solution_cost:
+#   - priority
+#   - removals
+#   - canceled-actions
+apt_aptitude_solution_cost: []
+
 
 ```
 
