@@ -1,3 +1,14 @@
+<a name="2.2.0"></a>
+## 2.2.0 (2017-08-24)
+
+
+#### Features
+
+*   add option to alter solution cost ([cfaf694c](https://github.com/weareinteractive/ansible-apt/commit/cfaf694c6ea921e6d6209db0e851c84dd35c8fe2))
+*   allow multiple file systems to be remounted ([5cb5a96c](https://github.com/weareinteractive/ansible-apt/commit/5cb5a96cfbdce66f7b5f4d2f7716e1e30279ac98))
+
+
+
 <a name="2.1.0"></a>
 ## 2.1.0 (2017-01-27)
 

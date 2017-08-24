@@ -22,7 +22,8 @@
   with_items:
     - "etc/apt/apt.conf.d/50unattended-upgrades"
 
-- name: Configuring remount filesystems
+# TODO to be depricated
+- name: Configuring remount filesystem
   template:
     src: "etc/apt/apt.conf.d/10remount_{{ item }}.j2"
     dest: "/etc/apt/apt.conf.d/10remount_{{ item }}"
@@ -32,6 +33,17 @@
   when: apt_remount_filesystem
   with_items:
     - "{{ apt_remount_filesystem }}"
+
+- name: Configuring remount filesystems
+  template:
+    src: "etc/apt/apt.conf.d/10remount_{{ item }}.j2"
+    dest: "/etc/apt/apt.conf.d/10remount_{{ item }}"
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  when: apt_remount_filesystems
+  with_items:
+    - "{{ apt_remount_filesystems }}"
 
 - name: Configuring APT proxy behavior
   template:
