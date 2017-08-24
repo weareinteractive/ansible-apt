@@ -116,7 +116,7 @@ apt_unattended_upgrades_automatic_reboot_time: now
 # remount file system: rootfs | tmpfs
 #   tmpfs:  remount tmp before running if mounted noexec
 #   rootfs: remount root filesystem r/w before running if mounted r/o
-apt_remount_filesystem:
+apt_remount_filesystem: []
 
 # repositories to register
 apt_repositories: []
