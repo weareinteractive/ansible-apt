@@ -76,3 +76,7 @@ apt_keys: []
 # apt_http_proxy_address:
 # HTTP pipeline depth (optional)
 # apt_http_pipeline_depth: 5
+
+# Change Aptitudes solution costs, default is not to change anything
+apt_aptitude_solution_cost: []
+

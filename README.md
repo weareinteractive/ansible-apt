@@ -148,7 +148,11 @@ This is an example playbook:
     apt_mails:
       - root
     apt_unattended_upgrades_notify_error_only: no
-
+    # Mirror https://lists.debian.org/543FF3BD.1020609@zen.co.uk
+    apt_aptitude_solution_cost:
+      - priority
+      - removals
+      - canceled-actions
 
 ```
 
