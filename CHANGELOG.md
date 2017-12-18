@@ -1,3 +1,13 @@
+<a name="2.3.0"></a>
+## 2.3.0 (2017-12-18)
+
+
+#### Features
+
+*   upgrade tasks for ansible 2.4 ([6e5a1ca4](https://github.com/weareinteractive/ansible-apt/commit/6e5a1ca49a855e7c183446cb4a2d817d58bab59f))
+
+
+
 <a name="2.2.0"></a>
 ## 2.2.0 (2017-08-24)
 

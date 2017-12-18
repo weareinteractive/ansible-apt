@@ -43,7 +43,7 @@ $ git clone https://github.com/weareinteractive/ansible-apt.git weareinteractive
 
 ## Dependencies
 
-* Ansible >= 2.1
+* Ansible >= 2.4
 
 ## Variables
 
@@ -119,6 +119,7 @@ apt_unattended_upgrades_automatic_reboot_time: now
 #   tmpfs:  remount tmp before running if mounted noexec
 #   rootfs: remount root filesystem r/w before running if mounted r/o
 apt_remount_filesystem:
+apt_remount_filesystems:
 
 # repositories to register
 apt_repositories: []
