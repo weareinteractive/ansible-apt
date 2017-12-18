@@ -1,3 +1,13 @@
+<a name="2.3.1"></a>
+### 2.3.1 (2017-12-18)
+
+
+#### Bug Fixes
+
+*   rename missing include to include_tasks ([da051d29](https://github.com/weareinteractive/ansible-apt/commit/da051d29e279e48061e7e6b41f504a00f1508b16))
+
+
+
 <a name="2.3.0"></a>
 ## 2.3.0 (2017-12-18)
 
