@@ -1,0 +1,7 @@
+---
+
+- name: Installing .deb packages
+  apt:
+    deb: "{{ item }}"
+    autoremove: "{{ apt_autoremove }}"
+  with_items: "{{ apt_deb_packages }}"

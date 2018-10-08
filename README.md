@@ -71,6 +71,8 @@ apt_packages: []
 apt_autoremove: yes
 # remove .deb files for packages no longer on your system
 apt_autoclean: yes
+# .deb packages to install.
+apt_deb_packages: []
 
 # whether or not suggested packages should be installed.
 apt_install_suggests: no
@@ -157,6 +159,8 @@ This is an example playbook:
     apt_packages:
       - vim
       - tree
+    apt_deb_packages:
+      - "https://releases.hashicorp.com/vagrant/2.1.5/vagrant_2.1.5_x86_64.deb"
     apt_mails:
       - root
     apt_unattended_upgrades_notify_error_only: no
