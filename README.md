@@ -71,6 +71,8 @@ apt_packages: []
 apt_autoremove: yes
 # remove .deb files for packages no longer on your system
 apt_autoclean: yes
+# .deb packages to install.
+apt_deb_packages: []
 
 # whether or not suggested packages should be installed.
 apt_install_suggests: no
