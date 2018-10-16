@@ -9,5 +9,5 @@
     keyserver: "{{ item.keyserver | default(omit) }}"
     url: "{{ item.url | default(omit) }}"
     validate_certs: "{{ item.validate_certs | default(omit) }}"
-    state: present
+    state: "{{ item.state | default('present') }}"
   with_items: "{{ apt_keys }}"
