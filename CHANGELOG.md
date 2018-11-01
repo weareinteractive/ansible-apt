@@ -1,3 +1,13 @@
+<a name="2.4.1"></a>
+### 2.4.1 (2018-11-01)
+
+
+#### Bug Fixes
+
+*   fix deprication warning for ansible 2.7 and apt package loops ([556b6445](https://github.com/weareinteractive/ansible-apt/commit/556b6445e748004846c6e16248d9d92b69afd0c3))
+
+
+
 <a name="2.5.0"></a>
 ## 2.5.0 (2018-10-08)
 
