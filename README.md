@@ -58,8 +58,22 @@ Here is a list of all the default variables for this role, which are also availa
 #   - root
 #   - foo@dev.null
 # apt_keys:
-#   - keyserver: keyserver.ubuntu.com
-#     id: 36A1D7869245C8950F966E92D8576A8BA88D21E9
+#   - id: 473041FA
+#     file: /tmp/apt.gpg
+#     data: "{{ lookup('file', 'apt.asc') }}"
+#     keyring: /etc/apt/trusted.gpg.d/debian.gpg
+#     keyserver: keyserver.ubuntu.com
+#     url: https://ftp-master.debian.org/keys/archive-key-6.0.asc
+#     validate_certs: yes
+#     state: present
+# apt_repositories:
+#     codename: trusty
+#     filename: google-chrome
+#     mode: 0644
+#     repo: 'ppa:nginx/stable'
+#     state: present
+#     update_cache: yes
+
 
 # sets the amount of time the cache is valid
 apt_cache_valid_time: 3600
