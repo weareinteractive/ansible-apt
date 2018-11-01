@@ -2,6 +2,10 @@
 
 - name: Adding apt repository
   apt_repository:
-    repo: "{{ item }}"
-    update_cache: yes
+    codename: "{{ item.codename | default(omit) }}"
+    filename: "{{ item.filename | default(omit) }}"
+    mode: "{{ item.mode | default(omit) }}"
+    repo: "{{ item.repo | default(omit) }}"
+    state: "{{ item.state | default(omit) }}"
+    update_cache: "{{ item.update_cache | default('yes') }}"
   with_items: "{{ apt_repositories }}"
