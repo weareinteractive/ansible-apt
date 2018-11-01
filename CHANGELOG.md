@@ -1,3 +1,14 @@
+<a name="2.4.2"></a>
+### 2.4.2 (2018-11-01)
+
+
+#### Features
+
+*   add options to apt_keys and apt_repositories ([f2ce4e0e](https://github.com/weareinteractive/ansible-apt/commit/f2ce4e0e6d41f539610adb34e0ac1093e482677c))
+*   added options ([bb80fe88](https://github.com/weareinteractive/ansible-apt/commit/bb80fe8804ee2bac18065b89a8abcadc14f0ed9b))
+
+
+
 <a name="2.4.1"></a>
 ### 2.4.1 (2018-11-01)
 
