@@ -13,6 +13,7 @@
 > * installs packages
 > * add repositories
 > * add keys
+> * apt pinning
 > * manages unattended upgrades
 > * optionally alters solution cost
 > * optionally allows filesystems to be remounted
@@ -154,6 +155,18 @@ apt_keys: []
 #   - canceled-actions
 apt_aptitude_solution_cost: []
 
+# List of preferences options.
+#EXAMPLES:
+# apt_preferences:
+#   - file: perl
+#     package: perl
+#     pin: "version 5.20*"
+#     priority: 1001
+apt_preferences: []
+# For use in group_vars.
+apt_preferences_group: []
+# For use in host_vars.
+apt_preferences_host: []
 
 ```
 

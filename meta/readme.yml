@@ -15,6 +15,7 @@ description: |
   > * installs packages
   > * add repositories
   > * add keys
+  > * apt pinning
   > * manages unattended upgrades
   > * optionally alters solution cost
   > * optionally allows filesystems to be remounted
