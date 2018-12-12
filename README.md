@@ -156,17 +156,12 @@ apt_keys: []
 apt_aptitude_solution_cost: []
 
 # List of preferences options.
-#EXAMPLES:
 # apt_preferences:
 #   - file: perl
 #     package: perl
 #     pin: "version 5.20*"
 #     priority: 1001
 apt_preferences: []
-# For use in group_vars.
-apt_preferences_group: []
-# For use in host_vars.
-apt_preferences_host: []
 
 ```
 
@@ -190,8 +185,12 @@ This is an example playbook:
       - "https://releases.hashicorp.com/vagrant/2.1.5/vagrant_2.1.5_x86_64.deb"
     apt_mails:
       - root
+    apt_preferences:
+      - file: perl
+        package: perl
+        pin: "version 5.20*"
+        priority: 1001
     apt_unattended_upgrades_notify_error_only: no
-
 
 ```
 
