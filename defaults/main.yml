@@ -103,14 +103,9 @@ apt_keys: []
 apt_aptitude_solution_cost: []
 
 # List of preferences options.
-#EXAMPLES:
 # apt_preferences:
 #   - file: perl
 #     package: perl
 #     pin: "version 5.20*"
 #     priority: 1001
 apt_preferences: []
-# For use in group_vars.
-apt_preferences_group: []
-# For use in host_vars.
-apt_preferences_host: []

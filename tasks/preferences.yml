@@ -2,12 +2,9 @@
 
 - name:  Configuring APT preferences
   template:
-    src: "etc/apt/preferences/preferences.j2"
+    src: etc/apt/preferences.d/preferences.j2
     dest: "/etc/apt/preferences.d/{{ item.file }}"
-    mode: "0644"
-    owner: "root"
-    group: "root"
-  with_flattened:
-    - "{{ apt_preferences }}"
-    - "{{ apt_preferences_group }}"
-    - "{{ apt_preferences_host }}"
+    owner: root
+    group: root
+    mode: 0644
+  with_items: "{{ apt_preferences }}"
