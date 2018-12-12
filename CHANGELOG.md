@@ -1,3 +1,14 @@
+<a name="2.5.0"></a>
+## 2.5.0 (2018-12-12)
+
+
+#### Features
+
+*   add apt pinning ([349d5b09](https://github.com/weareinteractive/ansible-apt/commit/349d5b09a9b90513da4b66829eca1172da692e96))
+*   added apt pinning ([d66994de](https://github.com/weareinteractive/ansible-apt/commit/d66994de87a291cb5a2ebfe2ed4867e290ad68fb))
+
+
+
 <a name="2.4.2"></a>
 ### 2.4.2 (2018-11-01)
 
