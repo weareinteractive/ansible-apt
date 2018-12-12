@@ -1,0 +1,10 @@
+---
+
+- name:  Configuring APT preferences
+  template:
+    src: etc/apt/preferences.d/preferences.j2
+    dest: "/etc/apt/preferences.d/{{ item.file }}"
+    owner: root
+    group: root
+    mode: 0644
+  with_items: "{{ apt_preferences }}"

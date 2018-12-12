@@ -2,5 +2,6 @@
 
 - include_tasks: keys.yml
 - include_tasks: repositories.yml
+- include_tasks: preferences.yml 
 - include_tasks: packages.yml
 - include_tasks: debs.yml
