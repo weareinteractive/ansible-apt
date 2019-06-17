@@ -68,7 +68,7 @@ Here is a list of all the default variables for this role, which are also availa
 #     validate_certs: yes
 #     state: present
 # apt_repositories:
-#     codename: trusty
+#   - codename: trusty
 #     filename: google-chrome
 #     mode: 0644
 #     repo: 'ppa:nginx/stable'
@@ -181,6 +181,7 @@ This is an example playbook:
     apt_packages:
       - vim
       - tree
+      - ca-certificates
     apt_deb_packages:
       - "https://releases.hashicorp.com/vagrant/2.1.5/vagrant_2.1.5_x86_64.deb"
     apt_mails:
