@@ -1,3 +1,13 @@
+<a name="2.5.1"></a>
+### 2.5.1 (2019-06-17)
+
+
+#### Features
+
+*   update syntax to ansible 2.8 ([fa5f8740](https://github.com/weareinteractive/ansible-apt/commit/fa5f87400d1d1db233bffcf8ced0b82c6460fd4d))
+
+
+
 <a name="2.5.0"></a>
 ## 2.5.0 (2018-12-12)
 
