@@ -15,7 +15,7 @@
 #     validate_certs: yes
 #     state: present
 # apt_repositories:
-#     codename: trusty
+#   - codename: trusty
 #     filename: google-chrome
 #     mode: 0644
 #     repo: 'ppa:nginx/stable'
