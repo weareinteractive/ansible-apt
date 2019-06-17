@@ -18,7 +18,7 @@
     owner: "root"
     group: "root"
     mode: "0644"
-  when: apt_unattended_upgrades
+  when: apt_unattended_upgrades | bool
   with_items:
     - "etc/apt/apt.conf.d/50unattended-upgrades"
 
@@ -30,7 +30,7 @@
     owner: "root"
     group: "root"
     mode: "0644"
-  when: apt_remount_filesystem
+  when: apt_remount_filesystem | bool
   with_items:
     - "{{ apt_remount_filesystem }}"
 
@@ -41,7 +41,7 @@
     owner: "root"
     group: "root"
     mode: "0644"
-  when: apt_remount_filesystems
+  when: apt_remount_filesystems | bool
   with_items:
     - "{{ apt_remount_filesystems }}"
 
@@ -63,7 +63,7 @@
     owner: "root"
     group: "root"
     mode: "0644"
-  when: apt_aptitude_solution_cost
+  when: apt_aptitude_solution_cost | bool
   with_items:
     - "etc/apt/apt.conf.d/20alter-aptitude-solution-cost"
 
