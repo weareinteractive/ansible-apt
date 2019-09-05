@@ -18,7 +18,7 @@
     mode: "0644"
   when: apt_unattended_upgrades_download_timer_override | bool
   with_items:
-    - "etc/systemd/system/apt-daily.timer.d/override.conf"
+  - "etc/systemd/system/apt-daily.timer.d/override.conf"
   notify: Reloading APT timer
 
 - name: Creating Upgrade timer directory
@@ -39,6 +39,6 @@
     mode: "0644"
   when: apt_unattended_upgrades_upgrade_timer_override | bool
   with_items:
-    - "etc/systemd/system/apt-daily-upgrade.timer.d/override.conf"
+  - "etc/systemd/system/apt-daily-upgrade.timer.d/override.conf"
   notify: Reloading APT timer
 
