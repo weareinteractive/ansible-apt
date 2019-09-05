@@ -1,0 +1,13 @@
+[Timer]
+{% if apt_unattended_upgrades_download_timer_replace is defined and apt_unattended_upgrades_download_timer_replace|bool %}
+OnCalendar=
+{% endif %}
+{% if apt_unattended_upgrades_download_timer_on_calendar is defined %}
+OnCalendar={{ apt_unattended_upgrades_download_timer_on_calendar }}
+{% endif %}
+{% if apt_unattended_upgrades_download_timer_randomized_delay_sec is defined %}
+RandomizedDelaySec={{ apt_unattended_upgrades_download_timer_randomized_delay_sec }}
+{% endif %}
+{% if apt_unattended_upgrades_download_timer_persistent is defined %}
+Persistent={{ apt_unattended_upgrades_download_timer_persistent }}
+{% endif %}

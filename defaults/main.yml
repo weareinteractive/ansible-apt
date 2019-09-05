@@ -79,6 +79,22 @@ apt_unattended_upgrades_automatic_reboot: no
 # Values: now | 02:00 | ...
 apt_unattended_upgrades_automatic_reboot_time: now
 
+# Override download timer ?
+apt_unattended_upgrades_download_timer_override: no
+# Unset and replace default system timer ?
+# apt_unattended_upgrades_download_timer_replace: true | false
+# OnCalendar new schedule, see man systemd.time.7, example :
+# apt_unattended_upgrades_download_timer_on_calendar: Mon..Fri *-*-* 6:00
+# Random delay and persistent, see systemd.time.5
+# apt_unattended_upgrades_download_timer_randomized_delay_sec:
+# apt_unattended_upgrades_download_timer_persistent: true | false
+# Override upgrade timer the same way
+apt_unattended_upgrades_upgrade_timer_override: no
+# apt_unattended_upgrades_upgrade_timer_replace
+# apt_unattended_upgrades_upgrade_timer_on_calendar
+# apt_unattended_upgrades_upgrade_timer_randomized_delay_sec
+# apt_unattended_upgrades_upgrade_timer_persistent
+
 # remount file system: rootfs | tmpfs
 #   tmpfs:  remount tmp before running if mounted noexec
 #   rootfs: remount root filesystem r/w before running if mounted r/o

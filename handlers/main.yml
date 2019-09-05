@@ -1,0 +1,5 @@
+---
+
+- name: Reloading APT timer
+  systemd:
+    daemon_reload: true
