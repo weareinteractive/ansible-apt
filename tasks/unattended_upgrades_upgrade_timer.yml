@@ -1,0 +1,20 @@
+---
+
+- name: Creating Upgrade timer directory
+  file:
+    path: "/etc/systemd/system/apt-daily-upgrade.timer.d"
+    state: directory
+    owner: root
+    group: root
+    mode: "0755"
+
+- name: Configuring Upgrade timer
+  template:
+    src: "{{ item }}.j2"
+    dest: "/{{ item }}"
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  with_items:
+  - "etc/systemd/system/apt-daily-upgrade.timer.d/override.conf"
+  notify: reload systemd

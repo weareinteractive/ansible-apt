@@ -22,9 +22,13 @@
   with_items:
     - "etc/apt/apt.conf.d/50unattended-upgrades"
 
-- name: Configuring APT timers
-  include_tasks: unattended_upgrades_timers.yml
-  when: apt_unattended_upgrades_download_timer_override | bool or apt_unattended_upgrades_upgrade_timer_override | bool
+- name: Configuring APT Download timer
+  include_tasks: unattended_upgrades_download_timer.yml
+  when: apt_unattended_upgrades_download_timer_override is not none
+
+- name: Configuring APT Upgrade timer
+  include_tasks: unattended_upgrades_upgrade_timer.yml
+  when: apt_unattended_upgrades_upgrade_timer_override is not none
 
 # TODO to be depricated
 - name: Configuring remount filesystem
