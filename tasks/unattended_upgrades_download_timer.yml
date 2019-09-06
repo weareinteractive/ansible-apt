@@ -1,0 +1,20 @@
+---
+
+- name: Creating Download timer directory
+  file:
+    path: "/etc/systemd/system/apt-daily.timer.d"
+    state: directory
+    owner: root
+    group: root
+    mode: "0755"
+
+- name: Configuring Download timer
+  template:
+    src: "{{ item }}.j2"
+    dest: "/{{ item }}"
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  with_items:
+  - "etc/systemd/system/apt-daily.timer.d/override.conf"
+  notify: reload systemd
