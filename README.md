@@ -106,6 +106,13 @@ apt_auto_clean_interval: 0
 
 # enable unattended-upgrades
 apt_unattended_upgrades: yes
+# list of origins patterns to control which packages are upgraded
+# replaces allowed-origins, kept for compatibility
+apt_unattended_upgrades_origins: []
+# List of allowed-origins, default value kept for compatibility
+# set to null to use origins-pattern
+apt_unattended_upgrades_allowed:
+- '"${distro_id}:${distro_codename}-security";'
 # list of packages to not update (regexp are supported)
 apt_unattended_upgrades_blacklist: []
 # Split the upgrade into the smallest possible chunks so that
@@ -127,10 +134,34 @@ apt_unattended_upgrades_autoremove: yes
 # Automatically reboot *WITHOUT CONFIRMATION*
 # if the file /var/run/reboot-required is found after the upgrade
 apt_unattended_upgrades_automatic_reboot: no
+# Automatically reboot even if there are users currently logged in.
+apt_unattended_upgrades_automatic_reboot_with_users: no
 # If automatic reboot is enabled and needed, reboot at the specific
 # time instead of immediately
 # Values: now | 02:00 | ...
 apt_unattended_upgrades_automatic_reboot_time: now
+# Enable logging to syslog.
+apt_unattended_upgrades_syslog_enable: no
+# Specify syslog facility.
+apt_unattended_upgrades_syslog_facility: "daemon"
+
+# Override download timer ? Default no
+apt_unattended_upgrades_download_timer_override: null
+# In case of override :
+# apt_unattended_upgrades_download_timer_override:
+#   on_calendar_replace: (true|false) If true, delete default system schedule. If not, default and new schedules will be merged
+#   on_calendar: new schedule, see man systemd.time.7, example : 'Mon..Fri *-*-* 6:00'
+#   randomized_delay_sec: random delay in sec
+#   persistent: (true|false)
+# See systemd.time.5 for random delay and persistent
+
+# Override upgrade timer the same way
+apt_unattended_upgrades_upgrade_timer_override: null
+# apt_unattended_upgrades_upgrade_timer_override:
+#   on_calendar_replace:
+#   on_calendar: 
+#   randomized_delay_sec: 
+#   persistent: 
 
 # remount file system: rootfs | tmpfs
 #   tmpfs:  remount tmp before running if mounted noexec
