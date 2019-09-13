@@ -59,7 +59,7 @@ apt_unattended_upgrades_origins: []
 # List of allowed-origins, default value kept for compatibility
 # set to null to use origins-pattern
 apt_unattended_upgrades_allowed:
-- '"${distro_id}:${distro_codename}-security";'
+- ${distro_id}:${distro_codename}-security
 # list of packages to not update (regexp are supported)
 apt_unattended_upgrades_blacklist: []
 # Split the upgrade into the smallest possible chunks so that
@@ -90,7 +90,7 @@ apt_unattended_upgrades_automatic_reboot_time: now
 # Enable logging to syslog.
 apt_unattended_upgrades_syslog_enable: no
 # Specify syslog facility.
-apt_unattended_upgrades_syslog_facility: "daemon"
+apt_unattended_upgrades_syslog_facility: daemon
 
 # Override download timer ? Default no
 apt_unattended_upgrades_download_timer_override: null
