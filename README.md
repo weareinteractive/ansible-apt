@@ -132,6 +132,24 @@ apt_unattended_upgrades_automatic_reboot: no
 # Values: now | 02:00 | ...
 apt_unattended_upgrades_automatic_reboot_time: now
 
+# Override download timer ? Default no
+apt_unattended_upgrades_download_timer_override: null
+# In case of override :
+# apt_unattended_upgrades_download_timer_override:
+#   on_calendar_replace: (true|false) If true, delete default system schedule. If not, default and new schedules will be merged
+#   on_calendar: new schedule, see man systemd.time.7, example : 'Mon..Fri *-*-* 6:00'
+#   randomized_delay_sec: random delay in sec
+#   persistent: (true|false)
+# See systemd.time.5 for random delay and persistent
+
+# Override upgrade timer the same way
+apt_unattended_upgrades_upgrade_timer_override: null
+# apt_unattended_upgrades_upgrade_timer_override:
+#   on_calendar_replace:
+#   on_calendar: 
+#   randomized_delay_sec: 
+#   persistent: 
+
 # remount file system: rootfs | tmpfs
 #   tmpfs:  remount tmp before running if mounted noexec
 #   rootfs: remount root filesystem r/w before running if mounted r/o
@@ -162,6 +180,19 @@ apt_aptitude_solution_cost: []
 #     pin: "version 5.20*"
 #     priority: 1001
 apt_preferences: []
+
+```
+
+## Handlers
+
+These are the handlers that are defined in `handlers/main.yml`.
+
+```yaml
+---
+
+- name: reload systemd
+  systemd:
+    daemon_reload: true
 
 ```
 
