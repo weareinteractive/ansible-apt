@@ -1,3 +1,17 @@
+<a name="2.6.1"></a>
+### 2.6.1 (2019-09-16)
+
+
+#### Bug Fixes
+
+*   ensure unattended-upgrades package installation ([03740eea](https://github.com/weareinteractive/ansible-apt/commit/03740eea70fdf744256e708798ea048be22a2a9e))
+
+#### Features
+
+*   add bool check ([1f9f71d3](https://github.com/weareinteractive/ansible-apt/commit/1f9f71d32df59563ebb2fb40b82ddc2e916e9de8))
+
+
+
 <a name="2.5.1"></a>
 ### 2.5.1 (2019-06-17)
 
