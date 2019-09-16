@@ -53,6 +53,13 @@ apt_auto_clean_interval: 0
 
 # enable unattended-upgrades
 apt_unattended_upgrades: yes
+# list of origins patterns to control which packages are upgraded
+# replaces allowed-origins, kept for compatibility
+apt_unattended_upgrades_origins: []
+# List of allowed-origins, default value kept for compatibility
+# set to null to use origins-pattern
+apt_unattended_upgrades_allowed:
+- ${distro_id}:${distro_codename}-security
 # list of packages to not update (regexp are supported)
 apt_unattended_upgrades_blacklist: []
 # Split the upgrade into the smallest possible chunks so that
@@ -74,10 +81,16 @@ apt_unattended_upgrades_autoremove: yes
 # Automatically reboot *WITHOUT CONFIRMATION*
 # if the file /var/run/reboot-required is found after the upgrade
 apt_unattended_upgrades_automatic_reboot: no
+# Automatically reboot even if there are users currently logged in.
+apt_unattended_upgrades_automatic_reboot_with_users: no
 # If automatic reboot is enabled and needed, reboot at the specific
 # time instead of immediately
 # Values: now | 02:00 | ...
 apt_unattended_upgrades_automatic_reboot_time: now
+# Enable logging to syslog.
+apt_unattended_upgrades_syslog_enable: no
+# Specify syslog facility.
+apt_unattended_upgrades_syslog_facility: daemon
 
 # Override download timer ? Default no
 apt_unattended_upgrades_download_timer_override: null
