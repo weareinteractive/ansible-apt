@@ -163,24 +163,6 @@ apt_unattended_upgrades_upgrade_timer_override: null
 #   randomized_delay_sec: 
 #   persistent: 
 
-# Override download timer ? Default no
-apt_unattended_upgrades_download_timer_override: null
-# In case of override :
-# apt_unattended_upgrades_download_timer_override:
-#   on_calendar_replace: (true|false) If true, delete default system schedule. If not, default and new schedules will be merged
-#   on_calendar: new schedule, see man systemd.time.7, example : 'Mon..Fri *-*-* 6:00'
-#   randomized_delay_sec: random delay in sec
-#   persistent: (true|false)
-# See systemd.time.5 for random delay and persistent
-
-# Override upgrade timer the same way
-apt_unattended_upgrades_upgrade_timer_override: null
-# apt_unattended_upgrades_upgrade_timer_override:
-#   on_calendar_replace:
-#   on_calendar: 
-#   randomized_delay_sec: 
-#   persistent: 
-
 # remount file system: rootfs | tmpfs
 #   tmpfs:  remount tmp before running if mounted noexec
 #   rootfs: remount root filesystem r/w before running if mounted r/o
