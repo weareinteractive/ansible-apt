@@ -1,3 +1,13 @@
+<a name="2.7.0"></a>
+## 2.7.0 (2019-09-16)
+
+
+#### Features
+
+*   extend unattended update config Merge branch 'pbessonies-feature/update_unattended_template' ([7b2c0e4f](https://github.com/weareinteractive/ansible-apt/commit/7b2c0e4fadf07feb8ef3a97425a282b38315a44b))
+
+
+
 <a name="2.6.1"></a>
 ### 2.6.1 (2019-09-16)
 
