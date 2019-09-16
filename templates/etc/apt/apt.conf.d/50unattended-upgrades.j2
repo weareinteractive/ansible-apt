@@ -1,11 +1,18 @@
 // {{ ansible_managed }}
 
+// Unattended-Upgrade::Origins-Pattern controls which packages are
+// upgraded. Replace Allowed-Origins
+Unattended-Upgrade::Origins-Pattern {
+{% for origin in apt_unattended_upgrades_origins %}
+  "{{ origin }}";
+{% endfor %}
+};
+
 // Automatically upgrade packages from these (origin:archive) pairs
 Unattended-Upgrade::Allowed-Origins {
-  "${distro_id}:${distro_codename}-security";
-//"${distro_id}:${distro_codename}-updates";
-//"${distro_id}:${distro_codename}-proposed";
-//"${distro_id}:${distro_codename}-backports";
+{% for allowed in apt_unattended_upgrades_allowed %}
+  "{{ allowed }}";
+{% endfor %}
 };
 
 // List of packages to not update (regexp are supported)
@@ -50,6 +57,9 @@ Unattended-Upgrade::Remove-Unused-Dependencies "{{ apt_unattended_upgrades_autor
 //  if the file /var/run/reboot-required is found after the upgrade
 Unattended-Upgrade::Automatic-Reboot "{{ apt_unattended_upgrades_automatic_reboot | to_nice_json }}";
 
+// Automatically reboot even if there are users currently logged in.
+Unattended-Upgrade::Automatic-Reboot-WithUsers "{{ apt_unattended_upgrades_automatic_reboot_with_users | to_nice_json }}";
+
 // If automatic reboot is enabled and needed, reboot at the specific
 // time instead of immediately
 //  Default: "now"
@@ -58,3 +68,9 @@ Unattended-Upgrade::Automatic-Reboot-Time "{{ apt_unattended_upgrades_automatic_
 // Use apt bandwidth limit feature, this example limits the download
 // speed to 70kb/sec
 //Acquire::http::Dl-Limit "70";
+
+// Enable logging to syslog. Default is False
+Unattended-Upgrade::SyslogEnable "{{ apt_unattended_upgrades_syslog_enable | to_nice_json }}";
+
+// Specify syslog facility. Default is daemon
+Unattended-Upgrade::SyslogFacility "{{ apt_unattended_upgrades_syslog_facility }}";
