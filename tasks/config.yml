@@ -30,18 +30,6 @@
   include_tasks: unattended_upgrades_upgrade_timer.yml
   when: apt_unattended_upgrades_upgrade_timer_override is not none
 
-# TODO to be depricated
-- name: Configuring remount filesystem
-  template:
-    src: "etc/apt/apt.conf.d/10remount_{{ item }}.j2"
-    dest: "/etc/apt/apt.conf.d/10remount_{{ item }}"
-    owner: "root"
-    group: "root"
-    mode: "0644"
-  when: apt_remount_filesystem | bool
-  with_items:
-    - "{{ apt_remount_filesystem }}"
-
 - name: Configuring remount filesystems
   template:
     src: "etc/apt/apt.conf.d/10remount_{{ item }}.j2"
