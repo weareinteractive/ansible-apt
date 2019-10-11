@@ -106,9 +106,9 @@ apt_unattended_upgrades_download_timer_override: null
 apt_unattended_upgrades_upgrade_timer_override: null
 # apt_unattended_upgrades_upgrade_timer_override:
 #   on_calendar_replace:
-#   on_calendar: 
-#   randomized_delay_sec: 
-#   persistent: 
+#   on_calendar:
+#   randomized_delay_sec:
+#   persistent:
 
 # remount file system: rootfs | tmpfs
 #   tmpfs:  remount tmp before running if mounted noexec
