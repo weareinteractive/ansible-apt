@@ -1,3 +1,13 @@
+<a name="2.8.0"></a>
+## 2.8.0 (2019-10-18)
+
+
+#### Features
+
+*   remove depricated apt_remount_filesystem ([7ca12fb4](https://github.com/weareinteractive/ansible-apt/commit/7ca12fb483e0cd8272589e5b1393e4c74611fb2a))
+
+
+
 <a name="2.7.0"></a>
 ## 2.7.0 (2019-09-16)
 
