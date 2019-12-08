@@ -4,7 +4,7 @@
 APT::Install-Recommends "{{ apt_install_recommends | to_nice_json }}";
 
 // Allow 'apt-get autoremove' to remove recommended packages
-APT::AutoRemove::RecommendsImportant "{{ apt_remove_recommends | to_nice_json }}";
+APT::AutoRemove::RecommendsImportant "{{ "false" if apt_remove_recommends else "true" }}";
 
 // Install Suggested packages by default
 APT::Install-Suggests "{{ apt_install_suggests | to_nice_json }}";
