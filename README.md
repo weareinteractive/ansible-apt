@@ -217,6 +217,7 @@ This is an example playbook:
 ---
 
 - hosts: all
+  become: yes
   roles:
     - weareinteractive.apt
   vars:
