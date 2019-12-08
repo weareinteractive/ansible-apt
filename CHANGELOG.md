@@ -1,3 +1,13 @@
+<a name="2.9.1"></a>
+### 2.9.1 (2019-12-08)
+
+
+#### Bug Fixes
+
+*   fix lint error ([65f889bd](https://github.com/weareinteractive/ansible-apt/commit/65f889bd07e3a7fd33e7df42023e7543b8af7c4a))
+
+
+
 <a name="2.9.0"></a>
 ## 2.9.0 (2019-12-08)
 
