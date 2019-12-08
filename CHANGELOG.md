@@ -1,3 +1,13 @@
+<a name="2.9.0"></a>
+## 2.9.0 (2019-12-08)
+
+
+#### Bug Fixes
+
+*   fix logic with apt_remove_recommends variable ([eaea78e1](https://github.com/weareinteractive/ansible-apt/commit/eaea78e1fb43f86b2a27db23ba121e805de8d835))
+
+
+
 <a name="2.8.0"></a>
 ## 2.8.0 (2019-10-18)
 
