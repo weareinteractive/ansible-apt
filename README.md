@@ -92,9 +92,9 @@ apt_deb_packages: []
 # whether or not suggested packages should be installed.
 apt_install_suggests: no
 # do not install Recommended packages by default
-apt_install_recommends: no
+apt_install_recommends: yes
 # allow 'apt-get autoremove' to remove recommended packages
-apt_remove_recommends: no
+apt_remove_recommends: yes
 # Enable the update/upgrade script
 apt_periodic: yes
 # Do “apt-get update” automatically every n-days (0=disable)
