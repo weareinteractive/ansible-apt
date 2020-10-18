@@ -27,8 +27,10 @@
 apt_cache_valid_time: 3600
 # upgrade system: safe | full | dist
 apt_upgrade: no
-# packages to install
+# packages to ensure
 apt_packages: []
+# package state
+apt_package_state: 'present'
 # remove packages that are no longer needed for dependencies
 apt_autoremove: yes
 # remove .deb files for packages no longer on your system
