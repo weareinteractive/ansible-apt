@@ -29,7 +29,7 @@ apt_cache_valid_time: 3600
 apt_upgrade: no
 # packages to ensure
 apt_packages: []
-# package state
+# default package state
 apt_package_state: 'present'
 # remove packages that are no longer needed for dependencies
 apt_autoremove: yes

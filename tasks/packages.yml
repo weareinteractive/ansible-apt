@@ -2,14 +2,23 @@
 
 - name: Ensuring packages
   apt:
-    name: "{{ (apt_package is mapping)|ternary(apt_package.name, apt_package) }}"
-    state: "{{ apt_package.state|default(apt_package_state) }}"
-    default_release: "{{ apt_package.default_release|default(omit) }}"
-    force: "{{ apt_package.force|default(omit) }}"
-    only_upgrade: "{{ apt_package.only_upgrade|default(omit) }}"
-    install_recommends: "{{ apt_package.install_recommends|default(apt_install_recommends) }}"
-    autoremove: "{{ apt_autoremove }}"
-    purge: "{{ apt_package.purge|default(omit) }}"
+    allow_unauthenticated: "{{ item.allow_unauthenticated | default(omit) }}"
+    default_release: "{{ item.default_release | default(omit) }}"
+    force: "{{ item.force | default(omit) }}"
+    force_apt_get: "{{ item.force_apt_get | default(omit) }}"
+    install_recommends: "{{ item.install_recommends | default(apt_install_recommends) }}"
+    name: "{{ (item is mapping) | ternary(item.name, item) }}"
+    only_upgrade: "{{ item.only_upgrade | default(omit) }}"
+    policy_rc_d: "{{ item.policy_rc_d | default(omit) }}"
+    purge: "{{ item.purge | default(omit) }}"
+    state: "{{ item.state | default(apt_package_state) }}"
+    update_cache: "{{ item.update_cache | default(omit) }}"
   with_items: "{{ apt_packages }}"
-  loop_control:
-    loop_var: apt_package
+
+- name: Remove useless packages from the cache
+  apt:
+    autoclean: "{{ apt_autoclean }}"
+
+- name: Remove dependencies that are no longer required
+  apt:
+    autoremove: "{{ apt_autoremove }}"

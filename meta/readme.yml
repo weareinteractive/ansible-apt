@@ -12,7 +12,7 @@ description: |
   > * updates apt
   > * cleans up apt
   > * configures apt
-  > * installs packages
+  > * ensures packages
   > * add repositories
   > * add keys
   > * apt pinning
