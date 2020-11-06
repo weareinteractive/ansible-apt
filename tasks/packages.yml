@@ -1,7 +1,24 @@
 ---
 
-- name: Installing packages
+- name: Ensuring packages
   apt:
-    name: "{{ apt_packages }}"
-    state: present
+    allow_unauthenticated: "{{ item.allow_unauthenticated | default(omit) }}"
+    default_release: "{{ item.default_release | default(omit) }}"
+    force: "{{ item.force | default(omit) }}"
+    force_apt_get: "{{ item.force_apt_get | default(omit) }}"
+    install_recommends: "{{ item.install_recommends | default(apt_install_recommends) }}"
+    name: "{{ (item is mapping) | ternary(item.name, item) }}"
+    only_upgrade: "{{ item.only_upgrade | default(omit) }}"
+    policy_rc_d: "{{ item.policy_rc_d | default(omit) }}"
+    purge: "{{ item.purge | default(omit) }}"
+    state: "{{ item.state | default(apt_package_state) }}"
+    update_cache: "{{ item.update_cache | default(omit) }}"
+  with_items: "{{ apt_packages }}"
+
+- name: Remove useless packages from the cache
+  apt:
+    autoclean: "{{ apt_autoclean }}"
+
+- name: Remove dependencies that are no longer required
+  apt:
     autoremove: "{{ apt_autoremove }}"

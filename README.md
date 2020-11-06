@@ -10,7 +10,7 @@
 > * updates apt
 > * cleans up apt
 > * configures apt
-> * installs packages
+> * ensures packages
 > * add repositories
 > * add keys
 > * apt pinning
@@ -80,8 +80,10 @@ Here is a list of all the default variables for this role, which are also availa
 apt_cache_valid_time: 3600
 # upgrade system: safe | full | dist
 apt_upgrade: no
-# packages to install
+# packages to ensure
 apt_packages: []
+# default package state
+apt_package_state: 'present'
 # remove packages that are no longer needed for dependencies
 apt_autoremove: yes
 # remove .deb files for packages no longer on your system
@@ -225,7 +227,11 @@ This is an example playbook:
     apt_packages:
       - vim
       - tree
-      - ca-certificates
+      - name: ca-certificates
+        state: latest
+      - name: zsh
+        state: absent
+        purge: true
     apt_deb_packages:
       - "https://releases.hashicorp.com/vagrant/2.1.5/vagrant_2.1.5_x86_64.deb"
     apt_mails:
