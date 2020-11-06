@@ -1,3 +1,13 @@
+<a name="2.10.0"></a>
+## 2.10.0 (2020-11-06)
+
+
+#### Features
+
+*   allow package parameters ([1b934447](https://github.com/weareinteractive/ansible-apt/commit/1b934447e871f1f9a0282d481c7859d2b3118742))
+
+
+
 <a name="2.9.1"></a>
 ### 2.9.1 (2019-12-08)
 
