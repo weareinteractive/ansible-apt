@@ -29,6 +29,8 @@ apt_cache_valid_time: 3600
 apt_upgrade: no
 # packages to ensure
 apt_packages: []
+# purge configuration when removing packages
+apt_remove_purge: no
 # default package state
 apt_package_state: 'present'
 # remove packages that are no longer needed for dependencies
@@ -42,6 +44,8 @@ apt_deb_packages: []
 apt_install_suggests: no
 # do not install Recommended packages by default
 apt_install_recommends: no
+# allow 'apt-get autoremove' to remove suggested packages
+apt_remove_suggests: no
 # allow 'apt-get autoremove' to remove recommended packages
 apt_remove_recommends: no
 # Enable the update/upgrade script
