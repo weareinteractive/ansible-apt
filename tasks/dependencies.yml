@@ -7,5 +7,5 @@
   vars:
     packages:
       - aptitude
-      - python-apt
-      - python-pycurl
+      - python3-apt
+      - python3-pycurl
