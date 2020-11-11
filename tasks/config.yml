@@ -63,3 +63,8 @@
   with_items:
     - "etc/apt/apt.conf.d/20alter-aptitude-solution-cost"
 
+- name: prevent apt from starting services
+  copy:
+    content: "exit {{ apt_policy }}"
+    dest: /usr/sbin/policy-rc.d
+    mode: "0755"
