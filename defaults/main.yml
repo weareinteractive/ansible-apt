@@ -22,7 +22,11 @@
 #     state: present
 #     update_cache: yes
 
-
+# depenencies packages
+apt_dependencies:
+  - aptitude
+  - python3-apt
+  - python3-pycurl
 # sets the amount of time the cache is valid
 apt_cache_valid_time: 3600
 # upgrade system: safe | full | dist

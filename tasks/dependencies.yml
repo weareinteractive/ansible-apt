@@ -1,11 +1,6 @@
 ---
 
-- name: Installing required packages
+- name: Installing dependency packages
   apt:
-    name: "{{ packages }}"
+    name: "{{ apt_dependencies }}"
     state: present
-  vars:
-    packages:
-      - aptitude
-      - python3-apt
-      - python3-pycurl

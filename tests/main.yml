@@ -24,3 +24,6 @@
         pin: "version 5.20*"
         priority: 1001
     apt_unattended_upgrades_notify_error_only: no
+    apt_remove_recommends: yes
+    apt_remove_suggests: yes
+    apt_remove_purge: yes

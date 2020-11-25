@@ -75,13 +75,19 @@ Here is a list of all the default variables for this role, which are also availa
 #     state: present
 #     update_cache: yes
 
-
+# depenencies packages
+apt_dependencies:
+  - aptitude
+  - python3-apt
+  - python3-pycurl
 # sets the amount of time the cache is valid
 apt_cache_valid_time: 3600
 # upgrade system: safe | full | dist
 apt_upgrade: no
 # packages to ensure
 apt_packages: []
+# purge configuration when removing packages
+apt_remove_purge: no
 # default package state
 apt_package_state: 'present'
 # remove packages that are no longer needed for dependencies
@@ -91,10 +97,14 @@ apt_autoclean: yes
 # .deb packages to install.
 apt_deb_packages: []
 
+# https://people.debian.org/~hmh/invokerc.d-policyrc.d-specification.txt
+apt_policy: 101
 # whether or not suggested packages should be installed.
 apt_install_suggests: no
 # do not install Recommended packages by default
 apt_install_recommends: no
+# allow 'apt-get autoremove' to remove suggested packages
+apt_remove_suggests: no
 # allow 'apt-get autoremove' to remove recommended packages
 apt_remove_recommends: no
 # Enable the update/upgrade script
@@ -242,6 +252,9 @@ This is an example playbook:
         pin: "version 5.20*"
         priority: 1001
     apt_unattended_upgrades_notify_error_only: no
+    apt_remove_recommends: yes
+    apt_remove_suggests: yes
+    apt_remove_purge: yes
 
 ```
 
