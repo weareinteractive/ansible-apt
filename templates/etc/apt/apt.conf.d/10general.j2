@@ -9,4 +9,10 @@ APT::AutoRemove::RecommendsImportant "{{ "false" if apt_remove_recommends else "
 // Install Suggested packages by default
 APT::Install-Suggests "{{ apt_install_suggests | to_nice_json }}";
 
+// Allow 'apt-get autoremove' to remove suggested packages
+APT::AutoRemove::SuggestsImportant "{{ "false" if apt_remove_suggests else "true" }}";
+
+// Always purge packages when removing them
+APT::Get::Purge "{{ "true" if apt_remove_purge else "false" }}";
+
 APT::Get::Show-Upgraded "true";
