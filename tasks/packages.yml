@@ -13,7 +13,7 @@
       changed_when: false
 
     - name: Hold or unhold a package
-      command: "apt-mark {{ item.hold is sameas true | ternary('hold', 'install') }} {{ item.name }}"
+      command: "apt-mark {{ item.hold is sameas true | ternary('hold', 'unhold') }} {{ item.name }}"
       when: >
         (item.name not in apt_mark_held_packages.stdout and item.hold is sameas true)
         or (item.name in apt_mark_held_packages.stdout and item.hold is not sameas true)
