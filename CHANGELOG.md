@@ -1,3 +1,14 @@
+<a name="2.11.0"></a>
+## 2.11.0 (2020-11-25)
+
+
+#### Features
+
+*   drop python 2 support, add `apt_remove_purge`, `apt_policy`, `apt_remove_suggests` Merge branch 'wolkenlos-io-master' into master ([a5f4a7c2](https://github.com/weareinteractive/ansible-apt/commit/a5f4a7c20c954f461224a70c2e61b4cd99b766cc))
+*   add  var ([9796e476](https://github.com/weareinteractive/ansible-apt/commit/9796e476b6cd9d19ba8c50fee3caba19bdfddb0e))
+
+
+
 <a name="2.10.0"></a>
 ## 2.10.0 (2020-11-06)
 
