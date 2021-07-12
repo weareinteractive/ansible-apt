@@ -239,6 +239,7 @@ This is an example playbook:
       - tree
       - name: ca-certificates
         state: latest
+        hold: true
       - name: zsh
         state: absent
         purge: true
