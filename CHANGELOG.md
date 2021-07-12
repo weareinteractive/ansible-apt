@@ -1,3 +1,13 @@
+<a name="2.12.0"></a>
+## 2.12.0 ()
+
+
+#### Features
+
+*   add apt-mark hold and unhold capability ([96483af8](https://github.com/weareinteractive/ansible-apt/commit/96483af8d8aa0666462dedfd01f62977928d7c54))
+
+
+
 <a name="2.11.0"></a>
 ## 2.11.0 (2020-11-25)
 
