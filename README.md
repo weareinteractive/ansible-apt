@@ -1,6 +1,6 @@
 # Ansible weareinteractive.apt role
 
-[![Build Status](https://img.shields.io/travis/weareinteractive/ansible-apt.svg)](https://travis-ci.org/weareinteractive/ansible-apt)
+[![Build Status](https://img.shields.io/travis/weareinteractive/ansible-apt.svg)](https://travis-ci.com/weareinteractive/ansible-apt)
 [![Galaxy](http://img.shields.io/badge/galaxy-weareinteractive.apt-blue.svg)](https://galaxy.ansible.com/weareinteractive/apt)
 [![GitHub Tags](https://img.shields.io/github/tag/weareinteractive/ansible-apt.svg)](https://github.com/weareinteractive/ansible-apt)
 [![GitHub Stars](https://img.shields.io/github/stars/weareinteractive/ansible-apt.svg)](https://github.com/weareinteractive/ansible-apt)
