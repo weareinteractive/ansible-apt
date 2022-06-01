@@ -151,3 +151,14 @@ apt_aptitude_solution_cost: []
 #     pin: "version 5.20*"
 #     priority: 1001
 apt_preferences: []
+
+# List of apt configuration.
+# apt_conf_d:
+#   - file: 10options
+#     content: |
+#       # Managed by Ansible
+#       Dpkg::Options {
+#         "--force-confdef";
+#         "--force-confold";
+#       }
+apt_conf_d: []
