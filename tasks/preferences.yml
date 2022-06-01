@@ -8,3 +8,12 @@
     group: root
     mode: 0644
   with_items: "{{ apt_preferences }}"
+
+- name:  Configuring APT
+  copy:
+    content: "{{ item.content }}"
+    dest: "/etc/apt/apt.conf.d/{{ item.file }}"
+    owner: root
+    group: root
+    mode: 0644
+  with_items: "{{ apt_conf_d }}"
